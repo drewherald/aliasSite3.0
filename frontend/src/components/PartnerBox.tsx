@@ -1,4 +1,4 @@
-import '../assets/styles/componentStyles/PartnerBox.module.css'
+import '../assets/styles/componentStyles/PartnerBox.css'
 import one from '../assets/photos/partners/skele1.png'
 import two from '../assets/photos/partners/skele2.png'
 import three from '../assets/photos/partners/skele3.png'

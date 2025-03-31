@@ -1,14 +1,16 @@
-import React,  {useContext} from 'react'
+import {useContext} from 'react'
 import { AliasContext } from '../App';
 
+type ProjButtonText = {
+  text: string
+}
 
-
-export default function ProjectButton({text}) {
+const ProjectButton:React.FC<ProjButtonText> = ({text}) =>{
 
     const AliasGlobal = useContext(AliasContext)
 
 
-    const setTag = (tag) => {
+    const setTag = (tag: string) => {
 
       if(AliasGlobal.projectTag === text){
         AliasGlobal.newTag(null)
@@ -24,3 +26,5 @@ export default function ProjectButton({text}) {
     </div>
   )
 }
+
+export default ProjectButton;

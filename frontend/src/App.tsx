@@ -1,16 +1,16 @@
 import { useState, createContext } from 'react'
-import "./assets/styles/App.module.css";
-import Home from "./pages/home/Home";
-import ComingSoon from './pages/comingSoon/ComingSoon';
-import Services from './pages/services/Services'
+import "./assets/styles/App.css";
+import Home from "./pages/home/Home.tsx";
+import ComingSoon from './pages/comingSoon/ComingSoon.tsx';
+import Services from './pages/services/Services.tsx'
 import { Route, Routes } from "react-router-dom";
-import MenuMobile from './components/MenuMobile';
-import ContactPage from './pages/contact/ContactPage';
-import Packages from './pages/packages/Packages';
-import Projects from './pages/projects/Projects';
-import AboutPage from './pages/about/AboutPage';
+import MenuMobile from './components/MenuMobile.tsx';
+import ContactPage from './pages/contact/ContactPage.tsx';
+import Packages from './pages/packages/Packages.tsx';
+import Projects from './pages/projects/Projects.tsx';
+import AboutPage from './pages/about/AboutPage.tsx';
 import NameYourPrice from './pages/nameYourPrice/NameYourPrice';
-import Partner from './pages/projects/Partner';
+import Partner from './pages/projects/Partner.tsx';
 
 type ThemeContextProps = {
   menuStatus: boolean;

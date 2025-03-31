@@ -1,4 +1,4 @@
-import '../../assets/styles/home/Partners.module.css'
+import '../../assets/styles/home/Partners.css'
 import PartnerBox from '../../components/PartnerBox.tsx'
 import { v4 as uuidv4 } from 'uuid'
 import { Link } from 'react-router-dom';

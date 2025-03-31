@@ -3,7 +3,7 @@ import backgroundImg from "../../assets/photos/webbackground.jpg";
 import TopBar from '../../components/TopBar.tsx';
 import { AliasContext } from '../../App';
 import SubPageTitle from '../../components/SubPageTitle.tsx';
-import '../../assets/styles/packages/Packages.module.css'
+import '../../assets/styles/packages/Packages.css'
 import PackageItem from '../../components/PackageItem.tsx';
 import { Link } from 'react-router-dom';
 import GetToKnow from '../home/GetToKnow';

@@ -1,10 +1,10 @@
 import {useContext }  from 'react'
 import backgroundImg from "../../assets/photos/webbackground.jpg";
-import TopBar from '../../components/TopBar';
+import TopBar from '../../components/TopBar.tsx';
 import { AliasContext } from '../../App';
-import SubPageTitle from '../../components/SubPageTitle';
+import SubPageTitle from '../../components/SubPageTitle.tsx';
 import GetToKnow from '../home/GetToKnow';
-import PriceForm from '../../components/PriceForm';
+import PriceForm from '../../components/PriceForm.tsx';
 
 export default function AboutPage() {
 

@@ -1,4 +1,4 @@
-import "../../assets/styles/home/ourServices.module.css";
+import "../../assets/styles/home/ourServices.css";
 import HomePagePackageItem from "../../components/HomePagePackageItem.tsx";
 
 export default function OurServices() {

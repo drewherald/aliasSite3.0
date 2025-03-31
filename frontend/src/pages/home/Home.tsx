@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import { AliasContext } from "../../App";
-import "../../assets/styles/home/Home.module.css";
+import "../../assets/styles/home/Home.css";
 import About from "./About";
-import Partners from "./Partners";
+import Partners from "./Partners.tsx";
 import GetToKnow from "./GetToKnow";
 import backgroundImg from "../../assets/photos/webbackground.jpg";
-import OurProcess from "./OurProcess";
-import OurServices from "./OurServices";
+import OurProcess from "./OurProcess.tsx";
+import OurServices from "./OurServices.tsx";
 
 export default function Home() {
   const AliasGlobal = useContext(AliasContext);

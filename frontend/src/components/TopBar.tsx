@@ -1,12 +1,15 @@
-import React from "react";
 import "../assets/styles/componentStyles/TopBar.css";
 import aliasStudios from "../assets/photos/aliasStudios.png";
 import { Link } from "react-router-dom";
 
-export default function TopBar() {
+type TopBarProps = {
+  className: string | undefined;
+}
+
+const TopBar: React.FC<TopBarProps> =({className = ''}) => {
   return (
     <>
-      <div className="topBarFlex">
+      <div className={className != "" ? `topBarFlex ${className}` : "topBarFlex"}>
         <ul>
         <Link to={"/"} id="a">
             <li className="topBarLink">HOME</li>
@@ -46,3 +49,5 @@ export default function TopBar() {
     </>
   );
 }
+
+export default TopBar;

@@ -1,13 +1,13 @@
 import { useContext, useState } from "react";
 import { AliasContext } from "../../App";
-import "../../assets/styles/home/About.module.css";
+import "../../assets/styles/home/About.css";
 import globeSmall from "../../assets/photos/globeSmall.png";
 import aliasStudios from "../../assets/photos/aliasStudios.png";
 //import "react-multi-carousel/lib/styles.css";
 import { Link } from "react-router-dom";
-import TopBar from "../../components/TopBar";
+import TopBar from "../../components/TopBar.tsx";
 import deskMenu from '../../assets/photos/deskMenu.png'
-import ServiceButton from "../../components/ServiceButton";
+import ServiceButton from "../../components/ServiceButton.tsx";
 
 
 export default function About() {
@@ -22,7 +22,7 @@ export default function About() {
   const [formSuccess, setFormSuccess] = useState('')
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     if(AliasGlobal.selectedService==null){
@@ -35,17 +35,29 @@ export default function About() {
   }
 
   const submitForm = async () => {
-    const response = await fetch(
-      "https://formspree.io/f/xjvdgrlj",
-      {
-        method: "POST",
-        body: JSON.stringify({ name: name, email: email, comments: "REQUIRED SERVICE: " + AliasGlobal.selectedService + " INFO: " +info }),
-        headers: {
-          "Content-Type": "application/json",
-        },
+    try{
+      const response = await fetch(
+        "https://formspree.io/f/xjvdgrlj",
+        {
+          method: "POST",
+          body: JSON.stringify({ name: name, email: email, comments: "REQUIRED SERVICE: " + AliasGlobal.selectedService + " INFO: " +info }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+
+      if(response.ok){
+        setFormSuccess('Thank you! Your response has been recorded and we will reach out to you shortly.')
+        resetState()
+      }else{ 
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-    ).then(setFormSuccess('Thank you! Your response has been recorded and we will reach out to you shortly.')).then(resetState())
-  }
+    }catch(error){
+      console.error('Error during fetch:', error);
+    }
+    }
+   
 
   const resetState = () => {
     setName("")
@@ -106,8 +118,8 @@ export default function About() {
                   <p style={{fontWeight: 700}}>Tell us a little about your vision:</p>
                   <textarea className="visionText" onChange={(e) => setInfo(e.target.value)} value={info} rows={5} placeholder="I want to reach more people... I need a website...I need a fresh brand" required />
                   <p style={{fontWeight: 700}}>Your Contact Details:</p>
-                  <input type="text" id="name" name="name" minlength="2 required" placeholder="Name" required className="serviceContactInfo" value={name} onChange={(e) => setName(e.target.value)}/>
-                  <input type="email"  id="email" name="email" minlength="2 required" placeholder="E-mail" className="serviceContactInfo" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                  <input type="text" id="name" name="name" minLength={2} aria-required placeholder="Name" required className="serviceContactInfo" value={name} onChange={(e) => setName(e.target.value)}/>
+                  <input type="email"  id="email" name="email" minLength={2} aria-required  placeholder="E-mail" className="serviceContactInfo" value={email} onChange={(e) => setEmail(e.target.value)}/>
                   <button type="submit" className="submitServiceForm">Get Your Custom Plan</button>
                   <p style={{color: 'red', fontSize: '14px'}}>{formError}</p>
                   <p style={{color: 'green', fontSize: '14px'}}>{formSuccess}</p>

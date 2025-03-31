@@ -1,7 +1,18 @@
-import React from 'react'
 import '../assets/styles/componentStyles/ServiceItem.css'
 
-export default function ServiceItem({contentItem}) {
+type ServiceItemType = {
+  contentItem: {
+    number: string;
+    title: string;
+    header: string;
+    body1: string;
+    body2: string;
+    buzzwords: string[];
+  }
+
+};
+
+const ServiceItem:React.FC<ServiceItemType> = ({contentItem}) => {
   return (
     <>
     <div className='mainSIContainer'>
@@ -28,3 +39,5 @@ export default function ServiceItem({contentItem}) {
     
   )
 }
+
+export default ServiceItem;

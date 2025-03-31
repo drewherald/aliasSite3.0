@@ -1,4 +1,4 @@
-import '../assets/styles/componentStyles/AboutItem.module.css'
+import '../assets/styles/componentStyles/AboutItem.css'
 
 type AboutItemType = {
   contentItem: {

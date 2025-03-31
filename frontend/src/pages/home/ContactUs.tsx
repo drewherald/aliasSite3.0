@@ -1,4 +1,4 @@
-import '../../assets/styles/home/ContactUs.module.css'
+import '../../assets/styles/home/ContactUs.css'
 import aliasStudios from "../../assets/photos/aliasStudios.png";
 import { Link } from 'react-router-dom';
 

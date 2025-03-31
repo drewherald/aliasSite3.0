@@ -1,18 +1,27 @@
 import { useContext } from 'react'
 import backgroundImg from "../../assets/photos/webbackground.jpg";
-import '../../assets/styles/services/services.module.css'
-import TopBar from '../../components/TopBar';
+import '../../assets/styles/services/services.css'
+import TopBar from '../../components/TopBar.tsx';
 import { AliasContext } from '../../App';
-import ServiceItem from '../../components/ServiceItem';
+import ServiceItem from '../../components/ServiceItem.tsx';
 import { Link } from 'react-router-dom';
-import SubPageTitle from '../../components/SubPageTitle';
+import SubPageTitle from '../../components/SubPageTitle.tsx';
 import GetToKnow from '../home/GetToKnow';
 
 export default function Services() {
 
+type ServiceItemType = {
+  number: string;
+  title: string;
+  header: string;
+  body1: string;
+  body2: string;
+  buzzwords: string[];
+};
+
 const AliasGlobal = useContext(AliasContext)
 
-const items = []
+const items: ServiceItemType[] = []
 
 const itemOne = {
     number: '01',

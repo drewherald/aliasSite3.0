@@ -4,7 +4,7 @@ import aliasStudios from "../assets/photos/aliasStudios.png";
 import NavLink from "./NavLink.tsx";
 import NavLinkClose from "../assets/photos/NavLinkClose.png";
 import { AnimatePresence, motion } from "framer-motion";
-import '../assets/styles/componentStyles/MenuMobile.module.css'
+import '../assets/styles/componentStyles/MenuMobile.css'
 import mobileMenu from "../assets/photos/ellipse.png";
 
 export default function MenuMobile() {

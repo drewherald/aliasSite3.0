@@ -1,12 +1,12 @@
 import { useContext, useState, useEffect }  from 'react'
 import backgroundImg from "../../assets/photos/webbackground.jpg";
-import TopBar from '../../components/TopBar';
+import TopBar from '../../components/TopBar.tsx';
 import { AliasContext } from '../../App';
-import SubPageTitle from '../../components/SubPageTitle';
-import '../../assets/styles/projects/Projects.module.css'
+import SubPageTitle from '../../components/SubPageTitle.tsx';
+import '../../assets/styles/projects/Projects.css'
 import { Link } from 'react-router-dom';
 import GetToKnow from '../home/GetToKnow';
-import ProjectItem from '../../components/ProjectItem';
+import ProjectItem from '../../components/ProjectItem.tsx';
 
 
 

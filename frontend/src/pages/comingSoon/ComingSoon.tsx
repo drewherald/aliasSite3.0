@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import backgroundImg from "../../assets/photos/webbackground.jpg";
-import '../../assets/styles/comingSoon/comingSoon.module.css'
-import TopBar from '../../components/TopBar';
+import '../../assets/styles/comingSoon/comingSoon.css'
+import TopBar from '../../components/TopBar.tsx';
 import { AliasContext } from '../../App';
 import { Link } from 'react-router-dom';
 

@@ -1,9 +1,16 @@
-import React from 'react'
 import ProjectButton from './ProjectButton'
 import '../assets/styles/componentStyles/ProjectItem.css'
-import { Link } from 'react-router-dom'
 
-export default function ProjectItem({contentItem}) {
+type ProjItemProp = {
+  contentItem: {
+    name: string;
+    work: string[];
+    year: string;
+    id: string;
+  }
+}
+
+const ProjectItem:React.FC<ProjItemProp> = ({contentItem}) => {
   return (
     <>
         <hr className='projRunner' />
@@ -12,12 +19,12 @@ export default function ProjectItem({contentItem}) {
           
           { contentItem.id != '' ? 
           
-          <Link className='projectTitle' onClick={() =>
+          <div className='projectTitle' onClick={() =>
             (window.location.href = `/projects/${contentItem.id}`)
-          }>{contentItem.name}</Link> :
-          <Link className='projectTitle' onClick={() =>
+          }>{contentItem.name}</div> :
+          <div className='projectTitle' onClick={() =>
             (window.location.href = `/comingSoon`)
-          }>{contentItem.name}</Link>
+          }>{contentItem.name}</div>
         
         }
            
@@ -30,3 +37,5 @@ export default function ProjectItem({contentItem}) {
 
   )
 }
+
+export default ProjectItem;

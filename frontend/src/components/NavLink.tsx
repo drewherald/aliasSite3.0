@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import '../assets/styles/componentStyles/NavLink.module.css'
+import '../assets/styles/componentStyles/NavLink.css'
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AliasContext } from "../App";

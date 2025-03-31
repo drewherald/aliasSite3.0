@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import '../assets/styles/componentStyles/PriceForm.module.css'
+import '../assets/styles/componentStyles/PriceForm.css'
 import { Link } from 'react-router-dom'
 
 export default function PriceForm() {

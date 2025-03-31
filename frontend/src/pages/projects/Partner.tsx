@@ -1,10 +1,10 @@
 import { useContext }  from 'react';
-import TopBar from '../../components/TopBar';
+import TopBar from '../../components/TopBar.tsx';
 import { Link } from 'react-router-dom';
 import { AliasContext } from '../../App';
 import { useParams } from 'react-router-dom'
 import GetToKnow from '../home/GetToKnow';
-import '../../assets/styles/projects/Partner.module.css';
+import '../../assets/styles/projects/Partner.css';
 import theBurlOne from "../../assets/photos/partners/theBurlOne.png";
 import theBurlTwo from "../../assets/photos/partners/theBurlTwo.png";
 import theBurlThree from "../../assets/photos/partners/theBurlThree.png";
@@ -13,7 +13,7 @@ import fouchOne from "../../assets/photos/partners/fouchOne.png";
 import fouchTwo from "../../assets/photos/partners/fouchTwo.png";
 import distilleryOne from "../../assets/photos/partners/distilleryOne.png";
 import distilleryTwo from "../../assets/photos/partners/distilleryTwo.png";
-import ProjectButton from '../../components/ProjectButton';
+import ProjectButton from '../../components/ProjectButton.tsx';
 
 export default function Partner() {
 

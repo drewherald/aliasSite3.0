@@ -1,4 +1,4 @@
-import '../../assets/styles/home/GetToKnow.module.css'
+import '../../assets/styles/home/GetToKnow.css'
 import backgroundImg from '../../assets/photos/webbackground.jpg'
 import globeSmall from '../../assets/photos/globeSmall.png'
 import { Link } from 'react-router-dom'

@@ -1,7 +1,7 @@
-import '../../assets/styles/home/ourProcess.module.css'
-import ProcessBox from '../../components/ProcessBox.jsx'
+import '../../assets/styles/home/ourProcess.css'
+import ProcessBox from '../../components/ProcessBox.tsx'
 import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.module.css';
+import 'react-multi-carousel/lib/styles.css';
 
 export default function OurProcess() {
 

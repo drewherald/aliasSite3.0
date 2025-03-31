@@ -1,14 +1,14 @@
 import { useContext }  from 'react'
 import backgroundImg from "../../assets/photos/webbackground.jpg";
-import TopBar from '../../components/TopBar.jsx';
+import TopBar from '../../components/TopBar.js';
 import { AliasContext } from '../../App.js';
-import SubPageTitle from '../../components/SubPageTitle.jsx';
-import '../../assets/styles/about/AboutPage.module.css'
+import SubPageTitle from '../../components/SubPageTitle.tsx';
+import '../../assets/styles/about/AboutPage.css'
 import { Link } from 'react-router-dom';
 import globeSmall from "../../assets/photos/globeSmall.png"
-import GetToKnow from '../home/GetToKnow.js';
+import GetToKnow from '../home/GetToKnow.tsx';
 import Marquee from "react-fast-marquee";
-import AboutItem from '../../components/AboutItem.js'
+import AboutItem from '../../components/AboutItem.tsx'
 
 export default function AboutPage() {
 

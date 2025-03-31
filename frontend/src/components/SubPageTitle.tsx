@@ -1,10 +1,13 @@
-import React from 'react'
 import PageArrow from '../assets/photos/pageArrow.png'
 import '../assets/styles/componentStyles/SubPageTitle.css'
 import aliasStudios from "../assets/photos/aliasStudios.png";
 import { Link } from 'react-router-dom';
 
-export default function SubPageTitle({subtitle, title}) {
+type SubPageTitleProps = {
+  subtitle: string;
+  title: string;
+}
+const SubPageTitle:React.FC<SubPageTitleProps> = ({subtitle, title}) => {
   return (
     <>
       <div className='subPageTitle'>
@@ -26,3 +29,5 @@ export default function SubPageTitle({subtitle, title}) {
     </>
   )
 }
+
+export default SubPageTitle;

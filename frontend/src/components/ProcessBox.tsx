@@ -2,7 +2,7 @@ import one from '../assets/photos/processes/processOne.png'
 import two from '../assets/photos/processes/processTwo.png'
 import three from '../assets/photos/processes/processThree.png'
 import four from '../assets/photos/processes/processFour.png'
-import '../assets/styles/componentStyles/ProcessBox.module.css'
+import '../assets/styles/componentStyles/ProcessBox.css'
 
 type refKeyType = {
   refKey: number;

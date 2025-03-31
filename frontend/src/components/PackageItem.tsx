@@ -1,4 +1,4 @@
-import '../assets/styles/componentStyles/PackageItem.module.css'
+import '../assets/styles/componentStyles/PackageItem.css'
 import bulletArrow from '../assets/photos/bulletArrow.png'
 
 type PackageItemType = {

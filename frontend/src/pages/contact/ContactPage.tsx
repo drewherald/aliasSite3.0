@@ -1,10 +1,10 @@
 import { useContext } from 'react'
 import backgroundImg from "../../assets/photos/webbackground.jpg";
-import '../../assets/styles/comingSoon/comingSoon.module.css'
-import TopBar from '../../components/TopBar';
+import '../../assets/styles/comingSoon/comingSoon.css'
+import TopBar from '../../components/TopBar.tsx';
 import { AliasContext } from '../../App';
-import ContactUs from '../home/ContactUs'
-import '../../assets/styles/contact/ContactPage.module.css'
+import ContactUs from '../home/ContactUs.tsx'
+import '../../assets/styles/contact/ContactPage.css'
 
 export default function ContactPage() {
   const AliasGlobal = useContext(AliasContext)
@@ -23,7 +23,7 @@ export default function ContactPage() {
           className={AliasGlobal.menuStatus == true ? " limitScroll" : ""}
         />
 
-        <ContactUs> </ContactUs>
+        <ContactUs />
           
         </div>
         

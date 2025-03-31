@@ -1,4 +1,4 @@
-import '../assets/styles/componentStyles/HomePagePackageItem.module.css'
+import '../assets/styles/componentStyles/HomePagePackageItem.css'
 import bulletArrow from '../assets/photos/bulletArrow.png'
 
 type ServiceItemType = {
