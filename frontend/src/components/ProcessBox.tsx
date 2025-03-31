@@ -1,11 +1,14 @@
-import React from 'react'
 import one from '../assets/photos/processes/processOne.png'
 import two from '../assets/photos/processes/processTwo.png'
 import three from '../assets/photos/processes/processThree.png'
 import four from '../assets/photos/processes/processFour.png'
-import '../assets/styles/componentStyles/ProcessBox.css'
+import '../assets/styles/componentStyles/ProcessBox.module.css'
 
-export default function ProcessBox({refKey}) {
+type refKeyType = {
+  refKey: number;
+}
+
+const ProcessBox:React.FC<refKeyType> = ({refKey}) => {
 
     let referenceKey = one
 
@@ -34,3 +37,5 @@ export default function ProcessBox({refKey}) {
 
   )
 }
+
+export default ProcessBox;

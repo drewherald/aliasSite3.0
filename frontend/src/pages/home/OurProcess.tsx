@@ -1,5 +1,5 @@
 import '../../assets/styles/home/ourProcess.module.css'
-import ProcessBox from '../../components/ProcessBox'
+import ProcessBox from '../../components/ProcessBox.jsx'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.module.css';
 
