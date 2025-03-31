@@ -1,0 +1,114 @@
+@media screen and (max-width: 1000px) {
+
+    .backgroundImgBottom img{
+        height: 65dvh !important;
+    }
+
+
+       .footText{
+        height: 55dvh !important;
+       }
+
+       .footText h5{
+        font-size: 5dvh !important;
+        margin: 5dvh 0 
+        20px 0 !important;
+       }
+
+       .footText p{
+        font-size: 1.5dvh !important;
+       }
+
+       .connectWUs{
+        padding: 1.5dvh 2dvw !important;
+        font-size: 12px;
+        width: 40dvw !important;
+       }
+
+       .globeSmall{
+        max-height: 5dvh;
+        margin-top: 0 !important;
+       }
+}
+
+.backgroundImgBottom{
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    left: 0;
+}
+
+.backgroundImgBottom img{
+    width: 100%;
+    height: 100dvh;
+    overflow: hidden;
+    vertical-align: bottom;
+    z-index: 0;
+}
+
+.footText{
+    z-index: 1;
+    position: absolute;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    left: 0;
+    
+}
+
+.footText h5{
+    font-family: Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 10dvh;
+    margin: 20dvh 0 
+    20px 0;
+}
+
+.footText p{
+    font-family: Helvetica, sans-serif;
+    font-weight: bolder;    
+    font-size: 2.5dvh;
+}
+
+.connectWUs{
+    background-color: white;
+    padding: 15px 40px 15px 40px;
+    border-radius: 25px;
+    text-align: center;
+    text-decoration: none;
+    font-family: Helvetica, sans-serif;
+    font-weight: bolder;
+    color: black;
+    margin: 5dvh 0;
+}
+
+
+@media screen and (min-width: 1001px) {
+    .connectWUs:hover{
+        animation: whiteButton .5s ease-in-out;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+}
+
+
+
+@keyframes whiteButton {
+    0%{
+        background-color: white;
+        color: black;
+    }
+
+    100%{
+        background-color: #100F55;
+        color: white;
+    }
+}
+
+.globeSmall{
+    margin-top: 10dvh;
+    max-height: 10svh;
+}

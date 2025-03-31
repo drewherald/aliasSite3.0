@@ -1,0 +1,83 @@
+.backgroundImgAboutPage{
+    position: absolute;
+    z-index: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100svh;
+}
+
+.backgroundImgAboutPage img{
+    height: 100%;
+    width: 100%;
+}
+
+.aboutPageContent{
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100svh;
+}
+
+.aboutPagePara{
+    padding: 50px 0;
+}
+
+.aboutPagePara p{
+    text-align: center;
+    font-size: 1.5dvw;
+    padding: 10px 5dvw;
+}
+
+.mediaDesignStrategyAbt{
+    margin: 0; 
+    font-family: HelveticaBold, Helvetica, sans-serif;
+  }
+  
+  .mediaDesignStrategyTwoAbt{
+    margin: 0; 
+    color: #100F55;
+    padding-bottom: 10svh;
+    font-family: HelveticaBold, Helvetica, sans-serif;
+  }
+
+  .aboutItemContainer{
+    width: 90dvw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 1000px) {
+
+    .aboutPagePara p{
+        font-size: 18px;
+    }
+
+    #gsAbt{
+        padding-top: 10svh;
+    }
+
+
+    .mediaDesignStrategyAbt{
+        font-size: 4dvw ; 
+    }
+
+    .mediaDesignStrategyTwoAbt{
+        font-size: 4dvw ; 
+    }
+
+  }
+
+  @media screen and (min-width: 1001px) {
+
+    .mediaDesignStrategyAbt{
+        font-size: 4.5dvw ; 
+    }
+
+    .mediaDesignStrategyTwoAbt{
+        font-size: 4.5dvw ; 
+    }
+  }

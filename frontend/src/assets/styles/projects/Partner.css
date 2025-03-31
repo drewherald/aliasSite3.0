@@ -1,0 +1,111 @@
+.partnerPageContent{
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100svh;
+    width: 100%;
+}
+
+.partnerTitle{
+    font-weight: 700;
+}
+
+.partnerFlavor{
+    font-size: 3svh;
+}
+
+.partnerYear{
+    font-size: 3svh;
+    font-weight: 700;
+    margin: 0;
+}
+
+.partnerPagePhoto{
+    width: 96%;
+    padding: 2svh 0;
+}
+
+.partnerPhotoContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projectButtonsPartner{
+    padding-top: 1svh;
+}
+
+.bottomBigLinkPartner{
+   padding: 20px 2svw 50px 2svw;
+}
+
+.partnerRunner{
+    height: 5px;
+    width: 96dvw;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    #partnerInfo{
+        padding: 0 5svw;
+    }
+
+    .partnerPhotoContainer{
+        padding: 5svh 0;
+    }
+
+    .partnerTitle{
+        font-size: 8svh;
+    }
+
+    .partnerYear{
+        padding-left: 5svw;
+    }
+
+    .projectButtonsPartner{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding-top: 5svh;
+    }
+}
+
+@media screen and (min-width: 1001px) {
+
+    #partnerInfo{
+        padding: 0 15svw;
+    }
+
+    .partnerPhotoContainer{
+        padding: 15svh 0;
+    }
+
+    .partnerYear{
+        padding-left: 15svw;
+    }
+
+    #bottomBigLinkPartner{
+        font-size: 14svh;
+
+
+    }
+    
+
+    .partnerTitle{
+        text-align: left;
+        padding-top: 15svh;
+        font-size: 12svh;
+        margin: 10svh 0 0 0;
+    }
+
+    .partnerFlavor{
+        text-align: left;
+        font-weight: 700;
+        
+    }
+        
+
+}

@@ -1,0 +1,524 @@
+@media screen and (max-width: 1000px) {
+  .noscrollH1{
+    font-size:36pt !important;
+    padding-top: 35px;
+    text-align: center !important;
+    padding-bottom: 0 !important;
+    max-width: 90dvw;
+  }
+
+
+  .titleH1{
+    padding:  0 !important;
+    height: 100svh !important;
+
+  }
+
+  .aliasStudiosMobile{
+    height: 14svh;
+    position: absolute;
+    top: 40px;
+  }
+
+    .bigGlobe{
+      padding-top: 7svh;
+      padding-bottom: 7svh !important;
+      max-width: 90dvw;
+  }
+
+  .whatWeDo{
+    padding-top: 10px !important;
+  }
+
+  .globeSmallMobile{
+    height: 8svh;
+    padding: 4svh 0 0 0;
+    animation: fadeIn .75s ease-in;
+    animation-delay: .75s;
+    opacity: 0;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  }
+
+  
+  .waypoint{
+    padding-bottom: 2svh !important;
+    padding-top: 8svh;
+    padding-right: 30dvw;
+  } 
+
+  .deskMenu{
+    display: none;
+  }
+  
+  .waypoint p{
+    font-size: 1.5svh !important;
+  }
+  
+  .waypoint img{
+    height: 2svh !important;
+  }
+
+  .mediaH1{
+    padding-right: 0 !important;
+  }
+  
+  .designH1{
+    padding-left: 0 !important;
+  }
+  
+  .strategyH1{
+    padding-right: 0 !important;
+  }
+
+  .mediaDesignStrategy h1{
+    font-size: 4.5dvw !important;
+    text-align: center !important;
+    font-size: 10svw !important;
+    padding-bottom: 2svh;
+  }
+
+  .mediaDesignStrategyTwo{
+    font-size: 4.5dvw !important; 
+  }
+
+  .servicesScroll{
+    padding: 1svh 0 6svh 0 !important;
+  }
+
+  .servicesScroll img{
+   max-width: 80dvw;
+  }
+
+
+  .mobileMenu{
+    position: fixed;
+    bottom: 0;    
+    display: flex;
+    justify-content: center;    
+    z-index: 3;
+    width: 100%;
+  }
+
+    .mobileMenu img{
+      max-height: 50px;
+      padding-bottom: 40px;
+  }
+
+  .titleSubtext{
+    font-family: Helvetica, sans-serif;
+    font-size: 2svh;
+    text-align: center;
+    font-weight: bold;
+    padding: 4svh 10dvw 8svh 10dvw;
+    margin: 0;
+    animation: fadeIn .75s ease-in;
+    animation-delay: .75s;
+    opacity: 0;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+
+  .aboutMobile{
+    display: none !important;
+  }
+
+  .deskMenuContainer{
+    display: none !important;
+  }
+
+
+  .mobileMenu{
+    display: none;
+  }
+
+  .globeSmallMobile{
+    display: none;
+  }
+
+  
+
+  .discoverHow:hover{
+    background-color: #100F55;
+    color: white;
+  }
+
+  .aliasStudiosMobile{
+    display: none;
+  }
+
+  .mediaDesignStrategy{
+    font-size: 5dvw !important; 
+   
+  }
+  
+  .mediaDesignStrategyTwo{
+    font-size: 5dvw !important; 
+   
+  }
+
+  @keyframes greyButton {
+    0%{
+        background-color: #100f14;
+    }
+
+    100%{
+        background-color: #100F55;
+    }
+}
+
+
+  .titleSubtext{
+    font-family: Helvetica, sans-serif;
+    font-size: 4svh;
+    text-align: center;
+    font-weight: bold;
+    padding: 0 20dvw 10svh 20dvw;
+    margin: 0;
+    animation: fadeIn .75s ease-in;
+    animation-delay: .75s;
+    opacity: 0;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  }
+
+}
+
+
+
+#about{
+  z-index: 1;
+}
+
+.noscrollH1{
+    animation: fadeIn .75s ease-in;
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+    font-weight: bolder;
+    padding-bottom: 10svh;
+    font-size: 14svh;
+}
+
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+  }
+}
+
+
+
+#about h1{
+    margin: 0;
+}
+
+
+.serviceGridFlex{
+    display: flex;
+    justify-content: center;
+}
+
+.aboutFlex{
+    display: flex;
+    flex-direction: column;
+}
+
+.titleH1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 15sVH 0 8svh 0;
+  height: 90svh;
+}
+
+.deskMenuContainer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.deskMenu{
+  height: 6lvh;
+  cursor: pointer;
+}
+
+.waypoint{
+  display: flex;
+  align-items: center;
+  padding-bottom: 10svh;
+}
+
+.waypoint p{
+  font-family: Helvetica, sans-serif;
+  font-size: 2.5svh;
+}
+
+.waypoint img{
+  height: 4svh;
+  padding-right: 12px;
+}
+
+.mediaDesignStrategy{
+  font-size: 4.5dvw;
+  margin: 0; 
+  font-family: HelveticaBold, Helvetica, sans-serif;
+}
+
+.mediaDesignStrategyTwo{
+  font-size: 4.5dvw;
+  margin: 0; 
+  color: #100F55;
+  padding-bottom: 10svh;
+  font-family: HelveticaBold, Helvetica, sans-serif;
+}
+
+
+.servicesScroll{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10svh 0;
+}
+
+
+
+
+.discoverHow{
+  background-color: white;
+  color: black;
+  padding: 15px 25px 15px 25px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-family: Helvetica, sans-serif;
+  font-weight: bolder;
+  animation: fadeIn .75s ease-in;
+  animation-delay: 1.5s;
+  opacity: 0;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+
+ 
+
+
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+@media screen and (max-width: 1000px) {
+
+
+  
+  .desktopBr{
+    display: none;
+  }
+
+}
+
+@media screen and (max-height: 500px) {
+
+
+
+  .noscrollH1{
+    padding-top: 0;
+  }
+
+  .discoverHow{
+    margin-top: 10svh;
+  }
+
+}
+
+
+/* creative services form styling */
+
+.formContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formContainer h1{
+  font-size: 10svh;
+  text-align: center;
+}
+
+.formContainer p{
+  font-size: 3svh;
+  text-align: center;
+}
+
+.serviceForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.servButtonClicked{
+  background-color: #100F55 !important;
+  color: white !important;
+}
+
+.fiveButtons{
+  padding: 3svh 0;
+}
+
+.visionText{
+  background-color: #100F55;
+  border: none;
+  resize: none;
+  border-radius: 5px;
+}
+
+.serviceContactInfo{
+  background-color: darkgray;
+  height: 5svh;
+  border: none;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.serviceContactInfo::placeholder{
+  color: grey !important;
+}
+
+.submitServiceForm{
+  height: 5svh;
+  border: none;
+  margin: 40px 0;
+  border-radius: 5px;
+  background-color: #0000FF;
+}
+
+
+
+@keyframes servHover {
+  0% { transform: scale(1);
+  }
+  100% { transform: scale(1.02);    background-color: #100F55;  color: white;  }
+}
+
+
+@media screen and (max-width: 1250px) {
+  .formContainer p{
+    padding: 0 15svw;
+  }
+
+  .formContainer h1{
+    font-size: 6svh;
+    padding-top: 10svh;
+  }
+
+  .fiveButtons{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+  }
+
+
+  #servBtnId{
+    width: 30dvw;
+    margin: 0 0 10px 0;
+  }
+
+  #fifthService{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    width: 30dvw;
+    margin: 0 0 10px 0;
+  }
+
+  .servButton{
+    grid-column: span 2;
+    text-align: center;
+  }
+
+  .visionText{
+    width: 80svw;
+  }
+
+  .serviceContactInfo{
+    width: 60svw;
+  }
+
+  .submitServiceForm{
+    width: 70svw;
+  }
+}
+
+@media screen and (min-width: 1251px) {
+
+  .formContainer h1{
+    font-size: 10svh;
+  }
+
+  .formContainer p{
+    padding: 0 25svw;
+  }
+
+  #servBtnId{
+    width: 7dvw;
+    margin: 0 10px 0 0;
+    font-size: 2.5svh;
+  }
+
+  #fifthService{
+    width: 7dvw;
+    margin: 0 10px 0 0;
+    font-size: 2.5svh;
+  }
+
+  #servBtnId:hover{
+    cursor: pointer;
+    animation: servHover .5s ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    .xButtonProjButton{
+        color: #0000FF;
+    }
+}
+
+  #fifthService:hover{
+    cursor: pointer;
+    animation: servHover .5s ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    .xButtonProjButton{
+        color: #0000FF;
+    }
+}
+
+.visionText{
+  width: 40svw;
+}
+
+.serviceContactInfo{
+  width: 20svw;
+}
+
+.submitServiceForm{
+  width: 30svw;
+}
+
+.submitServiceForm:hover{
+  cursor: pointer;
+  animation: servHover .5s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+
+}

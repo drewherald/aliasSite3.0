@@ -1,0 +1,9 @@
+.navLinkItem{
+    text-decoration: none;
+    font-family: helveticaBOLD, Helvetica, sans-serif;
+    font-size: 6dvw;
+}
+
+.navLinkDiv{
+    padding-bottom: 5dvh;
+}

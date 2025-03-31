@@ -1,0 +1,30 @@
+.backgroundImgComingSoon{
+    position: absolute;
+    z-index: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.backgroundImgComingSoon img{
+    height: 100%;
+    width: 100%;
+}
+
+.csContent{
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100svh;
+}
+
+ .csContent h1{
+    padding-top: 40svh;
+ }
+
+ .csLink:hover{
+    color: #100F55;
+
+}

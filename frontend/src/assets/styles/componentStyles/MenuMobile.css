@@ -1,0 +1,66 @@
+@media screen and (min-width: 1001px) {
+
+.navLinkItem{
+  font-size: 20px;
+}
+
+}
+
+    .aliasStudiosMenu{
+        max-height: 15svh;
+        padding: 5svh 0 5svh 0;
+    }
+    
+      .navLinkClose{
+        max-height: 5svh;
+      }
+    
+      .mobileMenuLinks{
+        width: 100%;
+        position: fixed;
+        height: 100svh;
+        background-color: #100F55;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform-origin: top;
+        z-index: 4;
+      }
+    
+      .navOverflow{
+        overflow: hidden;
+      }
+      .navLinkContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    
+
+.stopMenu{
+  opacity: 0;
+}
+
+.startMenu{
+  animation: menuFade .75s;
+  animation-delay: 1.5s;
+  opacity: 0;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes menuFade {
+  0%{
+      opacity: 0;
+  }
+
+  50%{
+      opacity: 0;
+  }
+
+  100%{
+      opacity: 1;
+  }
+}

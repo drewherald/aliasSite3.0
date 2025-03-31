@@ -1,0 +1,111 @@
+@media screen and (max-width: 1000px) {
+    .processAnimation{
+        display: none !important;
+    }
+
+    .processContent{
+        grid-template-columns: 1fr !important;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    .elevateBrand{
+        font-size: 10dvw !important;
+        padding: 0 0 6lvh 0 !important;
+    }
+
+    .processImages img{
+        max-width: 90dvw;
+    }
+
+    .processImages{
+        padding: 4dvh 0 !important;
+    }
+
+    .ourProcess{
+        padding-bottom: 5dvh;
+    }
+
+    .carousel-container-two{
+        display: none;
+    }
+
+    .processMobile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 1001px) {
+    .ourProcess{
+        padding-bottom: 5dvh;
+    }
+
+    .processImages img{
+        max-width: 40dvw;
+    }
+
+    .elevateBrand, h3{
+        padding-bottom: 5dvh;
+        padding-right: 10dvw;
+    }
+
+    .processMobile{
+        display: none;
+    }
+
+    .processContent{
+        padding: 0 4dvw;
+    }
+    
+}
+
+.processContent{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.elevateContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.elevateBrand{
+    margin: 0;
+    font-size: 10svh;
+    font-family: Helvetica, sans-serif !important;
+    font-weight: bolder;
+}
+
+
+
+.processAnimation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ourProcess{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.react-multi-carousel-dot button{
+    background-color: white;
+    border: none !important;
+}
+
+
+.react-multi-carousel-dot--active button{
+    background-color: #100F55 !important;
+}
+
+.react-multiple-carousel__arrow{
+    background-color: #100F14 !important;
+}

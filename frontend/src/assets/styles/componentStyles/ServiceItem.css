@@ -1,0 +1,91 @@
+.mainSIContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 90dvw;
+    justify-items: start;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .mainSIContainer{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 5fr;
+    }
+
+    .SILeft h1{
+        font-size: 6svh !important;
+    }
+    
+    .buzzWordBox{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .runner{
+        height: 5px;
+        width: 90dvw;
+        margin: 25px 0;
+    }
+
+}
+
+@media screen and (min-width: 1001px) {
+
+    .buzzWordBox{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .runner{
+        height: 5px;
+        width: 90dvw;
+        margin: 100px 0 50px 0;
+    }
+
+}
+
+
+.SILeft h3{
+    font-family: Helvetica, sans-serif;
+    padding-right: 20px;
+    padding: 0 20px 0 0;
+    font-size: 4svh;
+}
+
+.SILeft h1{
+    font-family: Helvetica, sans-serif;
+    font-size: 8svh;
+}
+
+.SILeft{
+    display: flex;
+    align-items: center;
+    max-height: 10svh;
+}
+
+.SIRight{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.SIRight p{
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+}
+
+.SIRight h3{
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.buzzWordBox h3{
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+    padding-bottom: 15px;
+
+}
+

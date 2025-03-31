@@ -1,0 +1,128 @@
+@media screen and (max-width: 1000px) {
+  .reachOut{
+    display: none !important;
+  }
+
+  .contactForm h1{
+    font-size: 4svh !important;
+  }
+
+  .aliasStudiosMobileCT{
+    height: 14svh;
+}
+}
+
+@media screen and (min-width: 1001px) {
+
+  .aliasStudiosMobileCT{
+    display: none;
+  }
+
+}
+
+.contactForm {
+    display: flex;
+    justify-content: center;
+    padding-top: 10svh;
+    flex-direction: column;
+    align-items: center;
+    height: 100svh;
+}
+  
+
+.contactForm h1{
+  font-size: 6svh;
+  text-align: center;
+}
+
+.contactForm form {
+    color: white;
+    }
+
+  .contactForm p {
+    color: white;
+  }
+
+  .contactForm p label {
+    color: white;
+    text-align: right;
+  }
+
+  .contactForm form div {
+    color: white;
+    padding-bottom: 5svh;
+  }
+
+  .contactForm form div label {
+    color: white;
+    position: absolute;
+  }
+
+  .contactForm form div input {
+    color: white;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    padding: 2px 0vw 2px 0px;
+    width: 50dvw;
+    font-size: medium;
+    font-family: Helvetica, sans-serif !important;
+    text-decoration: none;
+  }
+  .contactForm form div input::placeholder {
+    color: white;
+    font-size: medium;
+    font-family: Helvetica, sans-serif !important;
+    text-decoration: none;
+  }
+
+  #comments::placeholder {
+    color: white;
+    font-size: medium;
+    font-family: Helvetica, sans-serif !important;
+    text-decoration: none;
+  }
+
+  .contactForm form div textarea {
+    color: white;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    font-size: medium;
+    width: 50dvw;
+    padding: 2px 0vw 2px 0px;
+    font-family: Helvetica, sans-serif !important;
+    text-decoration: none;
+  }
+
+  .contactForm p a {
+    color: white;
+    background-color: white;
+    text-decoration: none;
+  }
+
+  #submit-form{
+    display: none;
+  }
+
+  .submitText{
+    cursor: pointer;
+  }
+
+  .contactInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+
+  .reachOut{
+    width: 80dvw;
+    display: flex;
+    justify-content: center;
+  }
+
+  .reachOut a{
+    padding: 0 10px;
+  }

@@ -1,0 +1,88 @@
+@media screen and (max-width: 1000px) {
+    
+
+    .serviceText h3{
+        font-size: 26px;
+    }
+
+    .serviceText p{
+        font-size: 16px;
+    }
+
+    .ourServicesGrid{
+       display: flex;
+       flex-direction: column;
+    }
+
+    .serviceCube img{
+        max-width: 80dvw !important;
+    }
+
+    .mobRunner{
+        width: 96dvw;
+        margin: 6dvh 0 4dvh 0;
+        background-color: white;
+    }
+
+    .deskRunner{
+       display: none;
+    }
+
+}
+
+@media screen and (min-width: 1001px) {
+    .serviceText{
+        width: 44dvw;
+        background-color: #100F14;
+        padding: 2dvw;
+    }
+
+    .ourServicesGrid{
+        background-color: white;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 2px;
+        justify-items: center;
+        width: 96dvw;
+    }
+
+    .mobRunner{
+       display: none;
+    }
+
+    .deskRunner{
+        width: 96dvw;
+        margin: 7dvh 0 7dvh 0;
+        background-color: white;
+    }
+
+    .whyUsP{
+        font-size: 1.3dvw;
+    }
+}
+
+.ourservices{
+    display: flex;
+    flex-direction: column;
+}
+
+.whyUs{
+    margin: 0;
+    font-size: 3dvw;
+}
+
+.serviceText{
+    display: flex;
+    flex-direction: column;
+}
+
+.serviceCube{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.serviceCube img{
+    max-width: 35dvw;
+}

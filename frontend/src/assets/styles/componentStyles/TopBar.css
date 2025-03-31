@@ -1,0 +1,92 @@
+@media screen and (max-width: 1000px) {
+    .topBarLink{
+        display: none !important;
+    }
+
+    .aliasStudios{
+        display: none;
+    }
+
+
+}
+
+
+.aliasMobileContainer{
+    display: none;
+}
+
+.topBarFlex{
+    display: flex;
+    width: 96%;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+
+.aliasStudios{
+    max-height: 80px;
+}
+
+li{
+    list-style-type: none;
+    margin: 0;
+    font-weight: 500 !important;
+    cursor: pointer;
+    font-family: helveticaBOLD, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12dvw;
+}
+
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 !important;
+}
+
+ul a{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#a{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.topBarLink:hover{
+    animation: topBarLinkHover .2s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@keyframes topBarLinkHover {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+  }
+
+.tbConnectButton{
+    background-color: white;
+    color: black;
+    padding: 13px 40px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #100F55;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+  }
+
+  .topBarLink{
+    font-family: Helvetica, sans-serif;
+
+  }

@@ -1,0 +1,40 @@
+
+html {
+    scroll-padding-top: 90px; /* height of your navbar */
+  }
+
+
+  @font-face {
+    font-family: helveticaBOLD;
+    src: url('../fonts/Helvetica-83.otf');
+  }
+
+  @font-face {
+    font-family: Tussilago;
+    src: url('../fonts/Tussilago.ttf');
+  }
+
+  @font-face {
+    font-family: TussilagoLt;
+    src: url('../fonts/tussilagoLt.otf');
+  }
+
+  @font-face {
+    font-family: helveticaMID;
+    src: url('../fonts/Helvetica-63.otf');
+  }
+
+  @font-face {
+    font-family: TussilagoBold;
+    src: url('../fonts/tussilagorg-bold.otf');
+  }
+
+  @font-face {
+    font-family: HelveticaNeueBold;
+    src: url('../fonts//HelveticaNeueBlack.otf');
+  }
+
+  @font-face {
+    font-family: HelveticaNeue;
+    src: url('../fonts/HelveticaNeueMedium.otf');
+  }

@@ -1,0 +1,82 @@
+.mainHPIContainer{
+    padding: 2dvw;
+    display: flex;
+    flex-direction: column;
+    background-color: #100F14;
+}
+
+.mainHPIContainer h1{
+    font-family: Helvetica, sans-serif;
+    font-size: 8svh;
+    margin: 20px 0 0 0;
+}
+
+
+.mainHPIContainer p{
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+    font-size: 1.3dvw;
+}
+
+.mainHPIContainer h3{
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 2dvw;
+}
+
+
+.includeListH p{
+    font-family: Helvetica, sans-serif;
+    padding: 10px 0 0 0;
+    font-size: 1.3dvw;
+}
+
+
+.includeListH span{
+    display: flex;
+    align-items: center;
+}
+
+.includeListH img{
+    padding: 10px 20px 0 0;
+    transform: scale(0.75);
+}
+
+@media screen and (max-width: 1000px) {
+
+
+
+    .mainHPIContainer p{
+        font-size: 16px;
+    }
+
+    .mainHPIContainer h3{
+        font-size: 26px;
+    }
+
+    .mainHPIContainer{
+        width: 92dvw;
+    }
+
+    .mobRunner{
+        width: 96dvw;
+        margin: 6dvh 0 4dvh 0;
+        background-color: white;
+    }
+
+}
+
+
+
+@media screen and (min-width: 1001px) {
+
+    .mainHPIContainer{
+        width: 44dvw;
+    }
+
+    .mobRunner{
+        display: none;
+    }
+
+}

@@ -1,0 +1,94 @@
+.projRunner{
+    height: 5px;
+    width: 90dvw;
+}
+
+.projectTitle{
+    font-family: Helvetica, sans-serif;
+    font-size: 4.5svh;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.projectTitle:hover{
+    animation: projHover .5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.projButtonClicked{
+    background-color: #100F55 !important;
+}
+
+
+
+@keyframes projHover {
+    0% { transform: scale(1);
+    }
+    100% { transform: scale(1.02);    color: #100F55;    }
+  }
+
+.projectYear{
+    font-family: Helvetica, sans-serif;
+    font-size: 4.5svh;
+    font-weight: bold;
+}
+
+.projectSubtitles{
+    display: grid;
+}
+
+@media screen and (max-width: 1000px) {
+    .projectSubtitles{
+        grid-template-columns: 3fr 1fr;
+        width: 90dvw;
+        align-items: center;
+        padding-bottom: 15px;
+    }
+
+    .projectButtons{
+        grid-row-start: 2;
+        grid-column-end: span 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
+
+    #projButtn{
+        width: 30dvw;
+        margin: 0 0 10px 0;
+    }
+
+    .projectYear{
+        font-size: 3svh;
+    }
+
+    .projectTitle{
+        font-size: 3svh;
+        margin: 0;
+    }
+
+}
+
+@media screen and (min-width: 1001px) {
+    .projectSubtitles{
+        grid-template-columns: 2fr 3fr 1fr;
+        width: 90dvw;
+        align-items: center;
+    }
+
+    #projButtn{
+        width: 7dvw;
+        margin: 0 10px 0 0;
+    }
+
+    #projButtn:hover{
+        cursor: pointer;
+        animation: greyButton .5s ease-in-out;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        .xButtonProjButton{
+            color: #0000FF;
+        }
+    }
+}

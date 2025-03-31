@@ -1,0 +1,36 @@
+.backgroundImgProjects{
+    position: absolute;
+    z-index: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.backgroundImgProjects img{
+    height: 100%;
+    width: 100%;
+}
+
+.projectsPageContent{
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100svh;
+    width: 100%;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+
+    #projectsWork{
+        display: none;
+    }
+
+    #mainProjSub{
+        padding-top: 5svh;
+    }
+
+}

@@ -1,0 +1,64 @@
+@media screen and (max-width: 600px) {
+    .partnerBox{
+        width: 60dvw !important;
+        height: 60dvw !important;
+        margin-right: 0 !important;
+    }
+
+    .logoPartner{
+        max-width: 60dvw !important;
+    }
+
+    .partnerName{
+        font-size: 6dvw !important;
+    }
+}
+
+.partnerBox{
+    width: 20dvw;
+    height: 20dvw;
+    flex: 0 0 auto; 
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.partnerTop{
+    margin: 20px;
+}
+
+.logoPartner{
+    max-width: 20dvw;
+    z-index: 0;
+    cursor: pointer;
+    opacity: 20%;
+}
+
+.logoPartner:hover{
+    opacity: 1;
+    animation: fadeOut .5s ease-out;
+}
+
+.logoPartner:hover ~ .partnerName{
+    display: none;
+}
+
+@keyframes fadeOut{
+    0%{
+        opacity: 20%;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+.partnerName{
+    position: absolute;
+    font-size: 2dvw;
+    font-family: Helvetica, sans-serif;
+    font-weight: bolder;
+    z-index: 1;
+}

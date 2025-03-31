@@ -1,0 +1,68 @@
+.mainAIContainer{
+    width: 90dvw;
+}
+
+.AILeft h3{
+    font-family: Helvetica, sans-serif;
+    padding-right: 20px;
+    padding: 0 20px 0 0;
+    font-size: 4svh;
+}
+
+.AILeft h1{
+    font-family: Helvetica, sans-serif;
+    font-size: 6svh;
+}
+
+.AILeft{
+    display: flex;
+    align-items: center;
+    max-height: 10svh;
+}
+
+.AIRight{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.AIRight p{
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+    font-size: 1.3dvw;
+}
+
+.aRunner{
+    width: 90dvw;
+    margin: 100px 0 50px 0;
+    background-color: white;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .mainAIContainer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .AIRight p{
+        font-size: 20px;
+        padding-top: 20px;
+    }
+
+    .AILeft h1{
+        font-size: 4svh;
+    }
+
+}
+
+@media screen and (min-width: 1001px) {
+
+    .mainAIContainer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: start;
+    }
+    
+
+}

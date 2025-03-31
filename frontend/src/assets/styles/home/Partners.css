@@ -1,0 +1,50 @@
+@media screen and (max-width: 1000px) {
+    .partnerTopContainer{
+       flex-direction: column;
+       padding-bottom: 4dvh !important;
+    }
+
+    .seeMore{
+        padding: 1.5dvh 7dvw !important;
+        font-size: 12px;
+        width: 20dvw !important;
+    }
+
+}
+
+.seeMoreContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seeMore{
+    background-color: white;
+    padding: 15px 25px 15px 25px;
+    border-radius: 25px;
+    text-align: center;
+    text-decoration: none;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    color: black;
+    width: 8dvw;
+}
+
+@media screen and (min-width: 1001px) {
+    .seeMore:hover{
+        animation: whiteButton .5s ease-in-out;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+}
+
+.partnerTopContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10dvh;
+}
+
+#partners{
+    padding: 0 0 4dvh 0;
+}

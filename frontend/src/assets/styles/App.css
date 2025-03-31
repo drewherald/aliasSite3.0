@@ -1,0 +1,15 @@
+*{
+    color: white;
+    font-family: Helvetica, sans-serif;
+    max-width: 100%;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #100f14;
+}
+
+.react-multi-carousel-track {
+max-width: none !important;
+}
