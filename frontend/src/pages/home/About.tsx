@@ -112,7 +112,7 @@ export default function About() {
             <p>Don’t know where to start? Just pick what sounds right, and we’ll take care of the rest.</p>
             <form onSubmit={handleSubmit} className="serviceForm">
                 <section className="fiveButtons">
-                  {selectedServices.map((service => <ServiceButton text={service} id={service}/>))}
+                  {selectedServices.map((service => <ServiceButton text={service}/>))}
                 </section>
                 
                   <p style={{fontWeight: 700}}>Tell us a little about your vision:</p>

@@ -6,7 +6,7 @@ type ServButtonText = {
   id?: string;
 }
 
-const ServiceButton:React.FC<ServButtonText> = ({text, id = ""}) => {
+const ServiceButton:React.FC<ServButtonText> = ({text = ""}) => {
 
     const AliasGlobal = useContext(AliasContext)
 

@@ -14,17 +14,17 @@ import Partner from './pages/projects/Partner.tsx';
 
 type ThemeContextProps = {
   menuStatus: boolean;
-  projectTag?: string | null;
+  projectTag: string;
   selectedService?: string | null;
   toggleMenu: () => void;
   scrollToTop: () => void;
-  newTag: (tag: string | null) => void;
+  newTag: (tag: string) => void;
   newService: (service: string | null) => void;
 }
 
 export const AliasContext = createContext<ThemeContextProps>({
   menuStatus: false,
-  projectTag: null,
+  projectTag: "",
   selectedService: null,
   toggleMenu: () => {},
   scrollToTop: () => {},
@@ -37,7 +37,7 @@ function App() {
 
   const [menuStatus, setMenuStatus] = useState(false);
 
-  const [projectTag, setProjectTag] = useState<string | null>(null);
+  const [projectTag, setProjectTag] = useState<string>("");
 
   const [selectedService, setSelectedService] = useState<string | null>(null);
 
@@ -49,7 +49,7 @@ function App() {
     window.scrollTo(0, 0)
   }
 
-  const newTag = (tag: string | null) => {
+  const newTag = (tag: string) => {
     setProjectTag(tag)
   }
 

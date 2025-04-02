@@ -13,7 +13,7 @@ const ProjectButton:React.FC<ProjButtonText> = ({text}) =>{
     const setTag = (tag: string) => {
 
       if(AliasGlobal.projectTag === text){
-        AliasGlobal.newTag(null)
+        AliasGlobal.newTag("")
       }else{
         AliasGlobal.newTag(tag)
       }

@@ -23,7 +23,7 @@ export default function Projects() {
 
     const [shownItems, setShownItems] = useState<ProjItem[]>([])
 
-    let items: ProjItem[]  = [];
+    const items: ProjItem[]  = [];
 
     const itemOne: ProjItem = {
         name: 'The Burl',
@@ -109,12 +109,15 @@ export default function Projects() {
 
     useEffect(() => {
 
-        if(AliasGlobal.projectTag !== null){
-            items = items.filter(item => item.work.includes(AliasGlobal.projectTag))
+        let  filteredItems: ProjItem[];
+
+        if(AliasGlobal.projectTag !== ""){
+            filteredItems = items.filter(item => item.work.includes(AliasGlobal.projectTag))
+            setShownItems(filteredItems)
+        }else{
+            setShownItems(items);
         }
 
-
-        setShownItems(items)
 
 
       }, [AliasGlobal.projectTag]);
