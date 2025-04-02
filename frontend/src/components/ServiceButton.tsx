@@ -21,7 +21,7 @@ const ServiceButton:React.FC<ServButtonText> = ({text, id = ""}) => {
     }
 
   return (
-    <div className={AliasGlobal.selectedService === text ? 'servButtonClicked servButton' : 'servButton'} id={text === 'Not Sure' ? `fifthService ${id}` : `servBtnId ${id}`} onClick={() => {setService(text)}} style={{borderRadius: '20px', display: 'inline', border: '2px solid white', color: 'black', backgroundColor: 'white', fontFamily: 'Helvetica, sans-serif', padding: '8px 15px',}}>
+    <div className={AliasGlobal.selectedService === text ? 'servButtonClicked servButton' : 'servButton'} id={text === 'Not Sure' ? `fifthService` : 'servBtnId'} onClick={() => {setService(text)}} style={{borderRadius: '20px', display: 'inline', border: '2px solid white', color: 'black', backgroundColor: 'white', fontFamily: 'Helvetica, sans-serif', padding: '8px 15px',}}>
       {text}
       {AliasGlobal.selectedService === text ? <span className='xButtonProjButton' style={{paddingLeft: '15px'}}>x</span> : ''}
     </div>

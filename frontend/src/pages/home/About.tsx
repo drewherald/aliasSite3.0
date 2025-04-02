@@ -3,7 +3,7 @@ import { AliasContext } from "../../App";
 import "../../assets/styles/home/About.css";
 import globeSmall from "../../assets/photos/globeSmall.png";
 import aliasStudios from "../../assets/photos/aliasStudios.png";
-//import "react-multi-carousel/lib/styles.css";
+import "react-multi-carousel/lib/styles.css";
 import { Link } from "react-router-dom";
 import TopBar from "../../components/TopBar.tsx";
 import deskMenu from '../../assets/photos/deskMenu.png'
