@@ -11,6 +11,7 @@ import Projects from './pages/projects/Projects.tsx';
 import AboutPage from './pages/about/AboutPage.tsx';
 import NameYourPrice from './pages/nameYourPrice/NameYourPrice';
 import Partner from './pages/projects/Partner.tsx';
+import AccountApp from './accountPages/AccountApp.tsx';
 
 type ThemeContextProps = {
   menuStatus: boolean;
@@ -70,6 +71,7 @@ function App() {
         <Route path='/comingSoon' element={<ComingSoon />} />
         <Route path='/nameYourPrice' element={<NameYourPrice />} />
         <Route path='/projects/:id' element={<Partner />} />
+        <Route path='/account' element={<AccountApp />} />
       </Routes>
       <MenuMobile />
     </AliasContext.Provider>
