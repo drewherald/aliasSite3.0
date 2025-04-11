@@ -11,7 +11,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import AliasStudios from '../assets/photos/aliasStudios.png'
 
 const pages = ['Analytics', 'Payments', 'Blog'];
@@ -67,34 +66,20 @@ const AccountAppBar: React.FC = () => {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{ display: { xs: 'block', md: 'none' } }}
+              sx={{ display: { xs: 'flex', md: 'none' }}}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+            <div style={{display: 'flex', flexDirection: 'column', width: '40svw'}}>
+            {pages.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu} sx={{backgroundColor: '#100F55', width: '40svw',  '&:hover': {
+                    backgroundColor: "black",
+                  }}}>
                   <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
                 </MenuItem>
               ))}
+            </div>
+              
             </Menu>
-          </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
+          </Box>          
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
@@ -113,7 +98,7 @@ const AccountAppBar: React.FC = () => {
               </IconButton>
             </Tooltip>
             <Menu
-              sx={{ mt: '45px' }}
+              sx={{ mt: '45px'}}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
@@ -128,11 +113,15 @@ const AccountAppBar: React.FC = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
+            <div style={{display: 'flex', flexDirection: 'column'}}>
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <MenuItem key={setting} onClick={handleCloseUserMenu} sx={{backgroundColor: '#100F55',  '&:hover': {
+                    backgroundColor: "black",
+                  },}}>
                   <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
                 </MenuItem>
               ))}
+            </div>
             </Menu>
           </Box>
         </Toolbar>

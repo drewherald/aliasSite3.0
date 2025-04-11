@@ -1,0 +1,13 @@
+/* make linkbar on account page column */
+
+.css-16hkvq8-MuiList-root{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+
+.css-13a2oid-MuiGauge-container>svg{
+    height: auto !important;
+}
