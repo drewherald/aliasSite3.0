@@ -5,16 +5,18 @@ import { Box, Typography } from "@mui/material";
 
 const LineGraph: React.FC = () => {
 
+  const xLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June']
+
 
   return (
     <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-        <Typography variant="h5">Monthly Followers</Typography>
+        <Typography variant="h5">Monthly Followers (All Socials)</Typography>
         <LineChart
-        xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
+        xAxis={[{ scaleType: 'point', data: xLabels }]}
         series={[
             {
-            data: [2, 5.5, 2, 8.5, 1.5, 5],
-            area: true,
+            data: [255, 333, 756, 833, 950, 1550],
+            area: false,
             color: '#0000FF',
             showMark: true,
         
