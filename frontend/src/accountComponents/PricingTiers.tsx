@@ -6,7 +6,6 @@ import {
   CardHeader,
   Typography,
   Button,
-  Grid,
   Container,
 } from "@mui/material";
 
@@ -23,18 +22,18 @@ const tiers: Tier[] = [
     title: "Community",
     price: "Free",
     description: [
-      "Basic components",
-      "Community support",
-      "MIT license",
+      "Basic support",
+      "No Analytics",
+      "Alias Portal Access",
     ],
     buttonText: "Get started",
     buttonVariant: "outlined",
   },
   {
-    title: "Pro",
+    title: "Alias Pro",
     price: "$15/mo",
     description: [
-      "Advanced components",
+      "Advanced analytics",
       "Priority support",
       "Commercial license",
     ],
@@ -42,14 +41,14 @@ const tiers: Tier[] = [
     buttonVariant: "contained",
   },
   {
-    title: "Premium",
-    price: "$49/mo",
+    title: "Alias +",
+    price: "$149/mo",
     description: [
       "All Pro features",
-      "Design resources",
-      "Figma kit",
+      "On-Demand Designs",
+      "Advanced Interations",
     ],
-    buttonText: "Buy Premium",
+    buttonText: "Buy Alias +",
     buttonVariant: "contained",
   },
 ];
@@ -71,11 +70,6 @@ const PricingTiers: React.FC = () => {
                   <Typography component="h2" variant="h3" color="text.primary">
                     {tier.price}
                   </Typography>
-                  {tier.title !== "Community" && (
-                    <Typography variant="h6" color="text.secondary">
-                      /mo
-                    </Typography>
-                  )}
                 </Box>
                 <ul>
                   {tier.description.map((line) => (

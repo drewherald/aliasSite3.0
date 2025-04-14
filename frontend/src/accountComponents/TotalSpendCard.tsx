@@ -30,7 +30,7 @@ const TotalSpendCard: React.FC = () => {
             justifyContent: 'center',
           }}
         >
-          <MonetizationOnIcon fontSize="large" sx={{backgroundColor: '#0000FF'}} />
+          <MonetizationOnIcon fontSize="large" sx={{backgroundColor: '#0000FF', color: 'white'}} />
         </Box>
         <Box>
           <Typography variant="subtitle2" color="text.secondary">
