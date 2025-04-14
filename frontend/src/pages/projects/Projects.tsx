@@ -7,7 +7,7 @@ import '../../assets/styles/projects/Projects.css'
 import { Link } from 'react-router-dom';
 import GetToKnow from '../home/GetToKnow';
 import ProjectItem from '../../components/ProjectItem.tsx';
-
+import styles from '../../assets/styles/WhiteFont.module.css'
 
 
 export default function Projects() {
@@ -123,7 +123,7 @@ export default function Projects() {
       }, [AliasGlobal.projectTag]);
 
   return (
-    <section className='projects'>
+    <section className={`${styles.all} projects`}>
       
       <div className="backgroundImgProjects">
             <img src={backgroundImg} alt="" />

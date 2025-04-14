@@ -1,22 +1,3 @@
-/*import React from "react";
-import Box from '@mui/material/Box';
-import AccountAppBar from "../accountComponents/AccountAppBar";
-import { Typography } from "@mui/material";
-
-const AccountHomeLayout: React.FC = () => {
-  return (
-    <>
-        <AccountAppBar />
-        <Box sx={{display: 'flex', flexDirection: 'column', padding: '5svh 10svh' }}>
-            
-            <Typography variant="h5"> Hi Drew, Welcome Back</Typography>
-        </Box>
-    </>
-  );
-};
-
-export default AccountHomeLayout; */
-
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { createTheme } from '@mui/material/styles';
@@ -29,6 +10,7 @@ import { DashboardLayout } from '@toolpad/core/DashboardLayout';
 import { useDemoRouter } from '@toolpad/core/internal';
 import '../assets/styles/accountStyles/accountHomeLayout.css'
 import AnalyticsDashboard from './AnalyticsDashboard';
+import YourPlan from './YourPlan';
 
 const NAVIGATION: Navigation = [
     {
@@ -117,26 +99,35 @@ const customTheme = createTheme({
 
 function PageContent({ pathname }: { pathname: string }) {
 
-    if(pathname === '/dashboard'){
-        return(
-            <AnalyticsDashboard />
-        );
-    }else{
-        console.log(pathname)
-        return (
-            <Box
-              sx={{
-                py: 4,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                textAlign: 'center',
-              }}
-            >
-              <Typography>Dashboard content for {pathname}</Typography>
-            </Box>
-          );
-    }
+
+  switch(pathname){
+
+    case '/dashboard':
+      return(
+        <AnalyticsDashboard />
+    );
+    break;
+
+    case '/yourPlan':
+      return <YourPlan />
+      break;
+
+    default:
+      return (
+        <Box
+          sx={{
+            py: 4,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            textAlign: 'center',
+          }}
+        >
+          <Typography>Dashboard content for {pathname}</Typography>
+        </Box>
+      );
+  }
+
  
 }
 

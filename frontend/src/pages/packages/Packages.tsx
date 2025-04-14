@@ -7,6 +7,7 @@ import '../../assets/styles/packages/Packages.css'
 import PackageItem from '../../components/PackageItem.tsx';
 import { Link } from 'react-router-dom';
 import GetToKnow from '../home/GetToKnow';
+import styles from '../../assets/styles/WhiteFont.module.css'
 
 
 export default function Packages() {
@@ -53,7 +54,7 @@ export default function Packages() {
 
 
   return (
-    <section className='packages'>
+    <section className={`${styles.all} packages`}>
       
       <div className="backgroundImgPackages">
             <img src={backgroundImg} alt="" />

@@ -120,7 +120,7 @@ export default function About() {
                   <p style={{fontWeight: 700}}>Your Contact Details:</p>
                   <input type="text" id="name" name="name" minLength={2} aria-required placeholder="Name" required className="serviceContactInfo" value={name} onChange={(e) => setName(e.target.value)}/>
                   <input type="email"  id="email" name="email" minLength={2} aria-required  placeholder="E-mail" className="serviceContactInfo" value={email} onChange={(e) => setEmail(e.target.value)}/>
-                  <button type="submit" className="submitServiceForm">Get Your Custom Plan</button>
+                  <button type="submit" style= {{color: 'white'}} className="submitServiceForm">Get Your Custom Plan</button>
                   <p style={{color: 'red', fontSize: '14px'}}>{formError}</p>
                   <p style={{color: 'green', fontSize: '14px'}}>{formSuccess}</p>
             </form>

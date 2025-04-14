@@ -9,6 +9,7 @@ import globeSmall from "../../assets/photos/globeSmall.png"
 import GetToKnow from '../home/GetToKnow.tsx';
 import Marquee from "react-fast-marquee";
 import AboutItem from '../../components/AboutItem.tsx'
+import styles from '../../assets/styles/WhiteFont.module.css'
 
 export default function AboutPage() {
 
@@ -57,7 +58,7 @@ export default function AboutPage() {
 
 
   return (
-    <section className='aboutPage'>
+    <section className={`${styles.all} aboutPage`}>
       
       <div className="backgroundImgAboutPage">
             <img src={backgroundImg} alt="" />

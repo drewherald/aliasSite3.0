@@ -12,6 +12,7 @@
 
 .projectTitle:hover{
     animation: projHover .5s;
+    cursor: pointer;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }

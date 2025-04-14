@@ -14,6 +14,7 @@ import fouchTwo from "../../assets/photos/partners/fouchTwo.png";
 import distilleryOne from "../../assets/photos/partners/distilleryOne.png";
 import distilleryTwo from "../../assets/photos/partners/distilleryTwo.png";
 import ProjectButton from '../../components/ProjectButton.tsx';
+import styles from '../../assets/styles/WhiteFont.module.css'
 
 export default function Partner() {
 
@@ -74,7 +75,7 @@ export default function Partner() {
 
 
   return (
-    <section className='partner'>
+    <section className={`${styles.all} partner`}>
        <div className='partnerPageContent'>
            
                 <TopBar

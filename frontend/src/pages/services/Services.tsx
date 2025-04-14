@@ -7,6 +7,7 @@ import ServiceItem from '../../components/ServiceItem.tsx';
 import { Link } from 'react-router-dom';
 import SubPageTitle from '../../components/SubPageTitle.tsx';
 import GetToKnow from '../home/GetToKnow';
+import styles from '../../assets/styles/WhiteFont.module.css'
 
 export default function Services() {
 
@@ -59,7 +60,7 @@ items.push(itemThree)
 console.log(items.length)
 
   return (
-    <section className='services'>
+    <section className={`${styles.all} services`}>
 
         <div className="backgroundImgServices">
             <img src={backgroundImg} alt="" />

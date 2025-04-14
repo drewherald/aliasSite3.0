@@ -1,6 +1,8 @@
 import "../assets/styles/componentStyles/TopBar.css";
 import aliasStudios from "../assets/photos/aliasStudios.png";
 import { Link } from "react-router-dom";
+import styles from '../assets/styles/WhiteFont.module.css'
+
 
 type TopBarProps = {
   className: string | undefined;
@@ -10,7 +12,7 @@ const TopBar: React.FC<TopBarProps> =({className = ''}) => {
   return (
     <>
       <div className={className != "" ? `topBarFlex ${className}` : "topBarFlex"}>
-        <ul>
+        <ul className={`${styles.all}`}>
         <Link to={"/"} id="a">
             <li className="topBarLink">HOME</li>
           </Link>

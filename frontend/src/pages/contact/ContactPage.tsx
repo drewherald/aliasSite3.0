@@ -5,13 +5,15 @@ import TopBar from '../../components/TopBar.tsx';
 import { AliasContext } from '../../App';
 import ContactUs from '../home/ContactUs.tsx'
 import '../../assets/styles/contact/ContactPage.css'
+import styles from '../../assets/styles/WhiteFont.module.css'
+
 
 export default function ContactPage() {
   const AliasGlobal = useContext(AliasContext)
 
 
   return (
-    <section className='contactContainer'>
+    <section className={`${styles.all} contactContainer`}>
 
         <div className="backgroundImgContact">
             <img src={backgroundImg} alt="" />

@@ -6,6 +6,7 @@ import NavLinkClose from "../assets/photos/NavLinkClose.png";
 import { AnimatePresence, motion } from "framer-motion";
 import '../assets/styles/componentStyles/MenuMobile.css'
 import mobileMenu from "../assets/photos/ellipse.png";
+import styles from '../assets/styles/WhiteFont.module.css'
 
 export default function MenuMobile() {
 
@@ -96,7 +97,7 @@ export default function MenuMobile() {
               >
                 {navLinks.map((link, index) => {
                   return (
-                    <div className="navOverflow">
+                    <div className={`${styles.all} navOverflow`}>
                       <NavLink
                         title={link.title}
                         href={link.href}

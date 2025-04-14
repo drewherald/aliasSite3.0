@@ -7,12 +7,13 @@ import GetToKnow from "./GetToKnow";
 import backgroundImg from "../../assets/photos/webbackground.jpg";
 import OurProcess from "./OurProcess.tsx";
 import OurServices from "./OurServices.tsx";
+import styles from '../../assets/styles/WhiteFont.module.css'
 
 export default function Home() {
   const AliasGlobal = useContext(AliasContext);
 
   return (
-    <div className="bodyContainer">
+    <div className = {`${styles.all} bodyContainer`}>
      
 
       <div className="backgroundImg">
