@@ -11,6 +11,7 @@ import { useDemoRouter } from '@toolpad/core/internal';
 import '../assets/styles/accountStyles/accountHomeLayout.css'
 import AnalyticsDashboard from './AnalyticsDashboard';
 import YourPlan from './YourPlan';
+import AccountSettings from '../accountComponents/AccountSettings';
 
 const NAVIGATION: Navigation = [
     {
@@ -23,23 +24,23 @@ const NAVIGATION: Navigation = [
     icon: <DashboardIcon />,
   },
   {
-    segment: 'yourPlan',
-    title: 'Your Plan',
-    icon: <ShoppingCartIcon />,
+    segment: 'workRequest',
+    title: 'Work Request',
+    icon: <SettingsIcon />,
   },
   {
     kind: 'header',
     title: 'Configuration',
     },
   {
-    segment: 'account',
-    title: 'Account',
-    icon: <AccountIcon />,
+    segment: 'yourPlan',
+    title: 'Your Plan',
+    icon: <ShoppingCartIcon />,
   },
   {
-    segment: 'settings',
-    title: 'Settings',
-    icon: <SettingsIcon />,
+    segment: 'accountSettings',
+    title: 'Account',
+    icon: <AccountIcon />,
   },
  
 ];
@@ -110,6 +111,10 @@ function PageContent({ pathname }: { pathname: string }) {
 
     case '/yourPlan':
       return <YourPlan />
+      break;
+
+    case '/accountSettings':
+      return <AccountSettings />
       break;
 
     default:
