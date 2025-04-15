@@ -9,7 +9,7 @@ const AnalyticsDashboard: React.FC = () => {
     <Box sx={{padding: '2.5svw'}}>
         <Grid container spacing={0}>
             <Grid size={{xs: 12, md: 12}}>
-                <Typography variant="h2"  sx={{padding: '2svh 0 0 0'}}>Welcome Alias Studios!</Typography>
+                <Typography variant="h3"  sx={{padding: '1svh 0 0 0'}}>Welcome Alias Studios!</Typography>
             </Grid>
             <Grid size={{xs: 12, md: 12}}>
                 <SpendCardsGrid />

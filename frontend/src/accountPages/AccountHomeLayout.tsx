@@ -12,6 +12,9 @@ import '../assets/styles/accountStyles/accountHomeLayout.css'
 import AnalyticsDashboard from './AnalyticsDashboard';
 import YourPlan from './YourPlan';
 import AccountSettings from '../accountComponents/AccountSettings';
+import WorkRequest from '../accountComponents/WorkRequest';
+import Home from '../pages/home/Home';
+import { Link } from 'react-router';
 
 const NAVIGATION: Navigation = [
     {
@@ -115,6 +118,14 @@ function PageContent({ pathname }: { pathname: string }) {
 
     case '/accountSettings':
       return <AccountSettings />
+      break;
+
+    case '/workRequest':
+      return <WorkRequest />
+      break;
+
+    case '/':
+      return <AnalyticsDashboard />
       break;
 
     default:
