@@ -11,3 +11,8 @@
 .css-13a2oid-MuiGauge-container>svg{
     height: auto !important;
 }
+
+.css-n46dlo{
+    display: flex;
+    flex-direction: column;
+}

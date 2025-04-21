@@ -5,6 +5,10 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AccountIcon from '@mui/icons-material/Person';
+import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
+import UploadFileIcon from '@mui/icons-material/UploadFile';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import StorefrontIcon from '@mui/icons-material/Storefront';
 import { AppProvider, type Navigation } from '@toolpad/core/AppProvider';
 import { DashboardLayout } from '@toolpad/core/DashboardLayout';
 import { useDemoRouter } from '@toolpad/core/internal';
@@ -13,8 +17,8 @@ import AnalyticsDashboard from './AnalyticsDashboard';
 import YourPlan from './YourPlan';
 import AccountSettings from '../accountComponents/AccountSettings';
 import WorkRequest from '../accountComponents/WorkRequest';
-import Home from '../pages/home/Home';
-import { Link } from 'react-router';
+import YourProjects from './YourProjects';
+
 
 const NAVIGATION: Navigation = [
     {
@@ -30,6 +34,26 @@ const NAVIGATION: Navigation = [
     segment: 'workRequest',
     title: 'Work Request',
     icon: <SettingsIcon />,
+  },
+  {
+    segment: 'yourProjects',
+    title: 'Your Projects',
+    icon: <WorkOutlineIcon />,
+  },
+  {
+    segment: 'fileUpload',
+    title: 'File Upload',
+    icon: <UploadFileIcon />,
+  },
+  {
+    segment: 'contentCalendar',
+    title: 'Content Calendar',
+    icon: <CalendarMonthIcon />,
+  },
+  {
+    segment: 'addOns',
+    title: 'Add Ons Marketplace',
+    icon: <StorefrontIcon />,
   },
   {
     kind: 'header',
@@ -115,6 +139,11 @@ function PageContent({ pathname }: { pathname: string }) {
     case '/yourPlan':
       return <YourPlan />
       break;
+
+    case '/yourProjects':
+      return <YourProjects />
+      break;
+  
 
     case '/accountSettings':
       return <AccountSettings />

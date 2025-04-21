@@ -14,6 +14,7 @@ const AccountSettings: React.FC = () => {
     const handleChange =
       (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
         setExpanded(isExpanded ? panel : false);
+        console.log(event);
       };
 
     return(
