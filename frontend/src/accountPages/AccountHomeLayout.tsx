@@ -9,6 +9,7 @@ import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import StorefrontIcon from '@mui/icons-material/Storefront';
+import CreditCardIcon from '@mui/icons-material/CreditCard';
 import { AppProvider, type Navigation } from '@toolpad/core/AppProvider';
 import { DashboardLayout } from '@toolpad/core/DashboardLayout';
 import { useDemoRouter } from '@toolpad/core/internal';
@@ -18,6 +19,7 @@ import YourPlan from './YourPlan';
 import AccountSettings from '../accountComponents/AccountSettings';
 import WorkRequest from '../accountComponents/WorkRequest';
 import YourProjects from './YourProjects';
+import ManageInvoices from './ManageInvoices';
 
 
 const NAVIGATION: Navigation = [
@@ -39,6 +41,11 @@ const NAVIGATION: Navigation = [
     segment: 'yourProjects',
     title: 'Your Projects',
     icon: <WorkOutlineIcon />,
+  },
+  {
+    segment: 'manageInvoices',
+    title: 'Manage Invoices',
+    icon: <CreditCardIcon />,
   },
   {
     segment: 'fileUpload',
@@ -144,6 +151,9 @@ function PageContent({ pathname }: { pathname: string }) {
       return <YourProjects />
       break;
   
+    case '/manageInvoices':
+    return <ManageInvoices />
+    break;
 
     case '/accountSettings':
       return <AccountSettings />
