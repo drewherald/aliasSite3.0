@@ -17,7 +17,6 @@ export default function About() {
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
-  const [info, setInfo] = useState('')
   const [formError, setFormError] = useState('')
   const [formSuccess, setFormSuccess] = useState('')
 
@@ -40,7 +39,7 @@ export default function About() {
         "https://formspree.io/f/xjvdgrlj",
         {
           method: "POST",
-          body: JSON.stringify({ name: name, email: email, comments: "REQUIRED SERVICE: " + AliasGlobal.selectedService + " INFO: " +info }),
+          body: JSON.stringify({ name: name, email: email, comments: "REQUIRED SERVICE: " + AliasGlobal.selectedService + " INFO: " +'' }),
           headers: {
             "Content-Type": "application/json",
           },
@@ -62,7 +61,6 @@ export default function About() {
   const resetState = () => {
     setName("")
     setEmail("")
-    setInfo("")
     setFormError("")
     AliasGlobal.newService(null)
   }
@@ -108,15 +106,13 @@ export default function About() {
           
           
            <div className="formContainer">
-            <h1>Creative Services</h1>
+            <h2>We are a creative agency that can build your entire digital footprint. Need a website, logo, or full social media management? We have you covered.</h2>
             <p>Don’t know where to start? Just pick what sounds right, and we’ll take care of the rest.</p>
             <form onSubmit={handleSubmit} className="serviceForm">
                 <section className="fiveButtons">
                   {selectedServices.map((service => <ServiceButton text={service}/>))}
                 </section>
                 
-                  <p style={{fontWeight: 700}}>Tell us a little about your vision:</p>
-                  <textarea className="visionText" onChange={(e) => setInfo(e.target.value)} value={info} rows={5} placeholder="I want to reach more people... I need a website...I need a fresh brand" required />
                   <p style={{fontWeight: 700}}>Your Contact Details:</p>
                   <input type="text" id="name" name="name" minLength={2} aria-required placeholder="Name" required className="serviceContactInfo" value={name} onChange={(e) => setName(e.target.value)}/>
                   <input type="email"  id="email" name="email" minLength={2} aria-required  placeholder="E-mail" className="serviceContactInfo" value={email} onChange={(e) => setEmail(e.target.value)}/>

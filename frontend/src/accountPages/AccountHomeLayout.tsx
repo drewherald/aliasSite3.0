@@ -20,6 +20,7 @@ import AccountSettings from '../accountComponents/AccountSettings';
 import WorkRequest from '../accountComponents/WorkRequest';
 import YourProjects from './YourProjects';
 import ManageInvoices from './ManageInvoices';
+import SocialsCalendar from './SocialsCalendar';
 
 
 const NAVIGATION: Navigation = [
@@ -161,6 +162,10 @@ function PageContent({ pathname }: { pathname: string }) {
 
     case '/workRequest':
       return <WorkRequest />
+      break;
+
+    case '/contentCalendar':
+      return <SocialsCalendar />
       break;
 
     case '/':
