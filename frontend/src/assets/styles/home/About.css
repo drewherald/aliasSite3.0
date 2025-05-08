@@ -414,23 +414,26 @@
 
 @media screen and (max-width: 1250px) {
   .formContainer p{
-    padding: 0 15svw;
+    padding: 0 10svw;
+    font-size: 2.25svh;
   }
 
-  .formContainer h1{
-    font-size: 6svh;
-    padding-top: 10svh;
+  .formContainer h2{
+    font-size: 2.5svh;
+    padding: 5svh 5svw 0 5svw;
+    text-align: center;
   }
 
   .fiveButtons{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 5px;
+    justify-items: center;
   }
 
 
   #servBtnId{
-    width: 30dvw;
+    width: 25svw;
     margin: 0 0 10px 0;
   }
 
