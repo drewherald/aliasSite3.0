@@ -1,10 +1,20 @@
 require('dotenv').config();
 const express = require('express');
+const mongoose = require("mongoose");
+const bodyParser = require('body-parser');
 const billingRoutes = require("./routes/billing");
+const uploadRoutes = require('./routes/upload');
+const userRoutes = require("./routes/user");
 
 const app = express();
 
 const cors = require("cors");
+
+//middleware
+
+
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 app.use(cors({ origin: true, credentials: true }));
 
@@ -22,6 +32,22 @@ app.get('/', (req, res) => {
 //routes
 app.use("/api/billing/", billingRoutes);
 
+app.use("/api/upload/", uploadRoutes);
 
-app.listen('3000', () => console.log('server running on port 3000'));
+app.use("/api/user", userRoutes);
+
+
+
+mongoose
+  .connect(process.env.MONG_URI)
+  .then(() => {
+    //listen for requests
+    app.listen(process.env.PORT || 3000, () => {
+      console.log("connected to db & listening on port 3000");
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
 

@@ -12,6 +12,7 @@ import AboutPage from './pages/about/AboutPage.tsx';
 import NameYourPrice from './pages/nameYourPrice/NameYourPrice';
 import Partner from './pages/projects/Partner.tsx';
 import AccountApp from './accountPages/AccountApp.tsx';
+import AuthContextProvider from './context/AuthContext.tsx';
 
 type ThemeContextProps = {
   menuStatus: boolean;
@@ -60,21 +61,23 @@ function App() {
 
   return (
     <>
-    <AliasContext.Provider value = {{menuStatus, projectTag, selectedService, toggleMenu, scrollToTop, newTag, newService}}>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path='/about' element={<AboutPage />} />
-        <Route path='/services' element={<Services />} />
-        <Route path='/projects' element={<Projects />} />
-        <Route path='/packages' element={<Packages />} />
-        <Route path='/contact' element={<ContactPage />} />
-        <Route path='/comingSoon' element={<ComingSoon />} />
-        <Route path='/nameYourPrice' element={<NameYourPrice />} />
-        <Route path='/projects/:id' element={<Partner />} />
-        <Route path='/account' element={<AccountApp />} />
-      </Routes>
-      <MenuMobile />
-    </AliasContext.Provider>
+    <AuthContextProvider>
+      <AliasContext.Provider value = {{menuStatus, projectTag, selectedService, toggleMenu, scrollToTop, newTag, newService}}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path='/about' element={<AboutPage />} />
+          <Route path='/services' element={<Services />} />
+          <Route path='/projects' element={<Projects />} />
+          <Route path='/packages' element={<Packages />} />
+          <Route path='/contact' element={<ContactPage />} />
+          <Route path='/comingSoon' element={<ComingSoon />} />
+          <Route path='/nameYourPrice' element={<NameYourPrice />} />
+          <Route path='/projects/:id' element={<Partner />} />
+          <Route path='/account' element={<AccountApp />} />
+        </Routes>
+        <MenuMobile />
+      </AliasContext.Provider>
+    </AuthContextProvider>
     </>
   );
 }

@@ -3,6 +3,7 @@ import { Box, Typography } from "@mui/material";
 import Stripe from 'stripe';
 import InvoiceCard from '../accountComponents/InvoiceCard';
 import { v4 as uuidv4 } from 'uuid';
+import { useAuthContext } from '../hooks/useAuthContext';
 
 type Response = {
     object: string;
@@ -13,6 +14,9 @@ type Response = {
 
 
 const ManageInvoices: React.FC = () => {
+
+        const { user } = useAuthContext();
+  
         const [invoices, setInvoices] = useState<Stripe.Invoice[]>([]);
         const [loading, setLoading] = useState(true);
       
@@ -31,9 +35,9 @@ const ManageInvoices: React.FC = () => {
         }, []);
     
     
-        const activeInvoiceList: Stripe.Invoice[] = invoices.slice().filter((item) => item.status === "open");
+        const activeInvoiceList: Stripe.Invoice[] = invoices.slice().filter((item) => item.status === "open" && item.customer_email == user?.email);
        
-        const inactiveInvoiceList: Stripe.Invoice[] = invoices.slice().filter((item) => item.status === "paid");
+        const inactiveInvoiceList: Stripe.Invoice[] = invoices.slice().filter((item) => item.status === "paid" && item.customer_email == user?.email);
       
         if (loading) return <p>Loading...</p>;
     
