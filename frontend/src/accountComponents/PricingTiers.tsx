@@ -25,11 +25,14 @@ const PricingTiers: React.FC = () => {
 
     const { user } = useAuthContext();
 
+    console.log(user?.tier)
 
-    const webString: TierString = user?.tier === 'web' ? ["Current Plan", "outlined"] : ["Get Started", "contained"]
-    const communityString: TierString = user?.tier === 'community' ? ["Current Plan", "outlined"] : ["Get Started", "contained"]
-    const execString: TierString = user?.tier === 'exec' ? ["Current Plan", "outlined"] : ["Get Started", "contained"]
-    const baseString: TierString = user?.tier === 'base' ? ["Current Plan", "outlined"] :["Get Started", "contained"]
+
+    const webString: TierString = user?.tier === 'Web' ? ["Current Plan", "outlined"] : ["Get Started", "contained"]
+    const communityString: TierString = user?.tier === 'Network' ? ["Current Plan", "outlined"] : ["Get Started", "contained"]
+    const execString: TierString = user?.tier === 'Executive' ? ["Current Plan", "outlined"] : ["Get Started", "contained"]
+    const baseString: TierString = user?.tier === 'Community' ? ["Current Plan", "outlined"] :["Get Started", "contained"]
+
 
 
     const tiers: Tier[] = [
@@ -48,7 +51,7 @@ const PricingTiers: React.FC = () => {
     buttonVariant: webString[1],
   },
   {
-    title: "Alias + Community",
+    title: "Alias + Network",
     price: "$149/mo/account",
     description: [
       "Social Media Management",

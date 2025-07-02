@@ -12,11 +12,15 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage});
 
-const {uploadFile} = require('../controllers/uploadController');
+const {uploadFile, uploadWorkRequest} = require('../controllers/uploadController');
 
 const router = express.Router();
 
 //Post File
-router.post('/',  upload.single('file'), uploadFile);
+router.post('/file',  upload.single('file'), uploadFile);
+
+//Post Work Request
+router.post('/workRequest', uploadWorkRequest);
+
 
 module.exports = router;

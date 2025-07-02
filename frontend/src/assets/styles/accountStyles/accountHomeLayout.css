@@ -16,3 +16,12 @@
     display: flex;
     flex-direction: column;
 }
+.css-1toxriw-MuiList-root-MuiMenu-list{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+}
+
+.css-1i4lgfa-MuiButtonBase-root-MuiMenuItem-root{
+    width: 100%;
+}

@@ -12,7 +12,6 @@ const userSchema = new Schema({
   userName: {
     type: String,
     required: true,
-    unique: true,
   },
   password: {
     type: String,
@@ -22,11 +21,6 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-   clientName: {
-    type: String,
-    required: false,
-  },
-  
 });
 
 //static signup method
@@ -60,7 +54,7 @@ userSchema.statics.signup = async function (email, userName, password) {
   const salt = await bcrypt.genSalt(10);
   const hash = await bcrypt.hash(password, salt);
 
-  const user = await this.create({ email, userName, password: hash, tier: "base" });
+  const user = await this.create({ email, userName, password: hash, tier: "Community" });
 
   return user;
 };
@@ -86,6 +80,54 @@ userSchema.statics.login = async function (email, password) {
   return user;
 };
 
+userSchema.statics.loginUserOauth = async function (email, userName, password) {
+  if (!email || !password) {
+    throw Error("All fields must be filled out!");
+  }
+
+  const user = await this.findOne({ email });
+
+  if (!user) {
+
+    //user validation
+
+  if (!validator.isEmail(email)) {
+    throw Error("Email is not valid");
+  }
+
+  const exists = await this.findOne({ email });
+
+  if (exists) {
+    throw Error("Email already in use. If you did not sign up with Google please use username & password.");
+  }
+
+  const salt = await bcrypt.genSalt(10);
+  const hash = await bcrypt.hash(password, salt);
+
+  try{
+    const user = await this.create({ email, userName, password: hash, tier: "Community" });
+    return user;
+  }catch(e){
+    console.log(e);
+    throw Error("User already exists. If you did not sign up with Google please use username & password.")
+  }
+
+  
+
+  
+    
+  }else{
+    const match = await bcrypt.compare(password, user.password);
+
+  if (!match) {
+    throw Error("Incorrect password");
+  }
+
+  return user;
+  }
+
+  
+};
 
 //static update method
 userSchema.statics.updateUser = async function (email, password) {

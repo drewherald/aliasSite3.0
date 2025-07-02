@@ -36,12 +36,14 @@ import { useAuthContext } from "../hooks/useAuthContext";
 import { useLogout } from "../hooks/useLogout";
 import { useLogin } from "../hooks/useLogin";
 import { Alert } from "@mui/material";
+  import {useGoogleLogin } from '@react-oauth/google';
 
 type AccountContextProps = {
   userName: string;
 };
 
 const localUser = localStorage.getItem("user");
+
 
 export const AccountContext = createContext<AccountContextProps>({
   userName: "",
@@ -258,7 +260,7 @@ export default function DashboardLayoutBranding() {
   const router = useDemoRouter("/dashboard");
   const [session, setSession] = useState<Session | null>(null);
   const [userName, setUserName] = useState<string>("");
-  const { login, error } = useLogin();
+  const { login, loginOauth, error } = useLogin();
 
   const Subtitle = () => {
   return (
@@ -272,26 +274,81 @@ export default function DashboardLayoutBranding() {
   const providers = [
     { id: "credentials", name: "Email and Password" },
     { id: "google", name: "Google" },
-    { id: "facebook", name: "Facebook" },
   ];
+
+// Google login handler
+
+interface TokenResponse {
+  access_token: string;
+  expires_in: number;
+  scope: string;
+  token_type: string;
+  state?: string;
+}
+
+const googleLogin = useGoogleLogin({
+  onSuccess: async (tokenResponse: TokenResponse) => {
+    try {
+      const res = await fetch("https://www.googleapis.com/oauth2/v3/userinfo", {
+        headers: {
+          Authorization: `Bearer ${tokenResponse.access_token}`,
+        },
+      });
+
+      const profile = await res.json();
+
+
+              console.log(profile)
+
+             
+                await loginOauth (profile.email, profile.name, profile.sub)
+
+             
+             
+      // You can persist this in state, context, or localStorage
+      setSession({
+        user: {
+          name: profile.name,
+          email: profile.email,
+          image: profile?.picture,
+        },
+      });
+
+    } catch (err) {
+      console.error("Failed to fetch Google user profile", err);
+    }
+  },
+  onError: () => {
+    console.error("Google login failed");
+  },
+});
+
+
 
   const signIn: (provider: AuthProvider, formData: FormData) => void = async (
     provider,
     formData
   ) => {
 
-    const email = formData.get("email");
+    
+    if(provider.id === "credentials"){
+      const email = formData.get("email");
     const password = formData.get("password");
 
-    await login (email, password)
+        await login (email, password,)
+    }else if(provider.id === "google"){
+      googleLogin()
+    }
 
-     if (localUser) {
+   
+
+     if (localUser && provider) {
           setSession({
             user: {
               name: user?.userName,
               email: user?.email,
-              image:
-                "https://lh3.googleusercontent.com/a/ACg8ocIikB7lwv88vTut9GgiK1_jXXCbIYvxDWSCSQA_hIDnB0OIVeyR=s192-c-rg-br100",
+              /*image:
+                "https://lh3.googleusercontent.com/a/ACg8ocIikB7lwv88vTut9GgiK1_jXXCbIYvxDWSCSQA_hIDnB0OIVeyR=s192-c-rg-br100",*/
             },
           });
         }
@@ -305,8 +362,8 @@ export default function DashboardLayoutBranding() {
             user: {
               name: user?.userName,
               email: user?.email,
-              image:
-                "https://lh3.googleusercontent.com/a/ACg8ocIikB7lwv88vTut9GgiK1_jXXCbIYvxDWSCSQA_hIDnB0OIVeyR=s192-c-rg-br100",
+             /* image:
+                "https://lh3.googleusercontent.com/a/ACg8ocIikB7lwv88vTut9GgiK1_jXXCbIYvxDWSCSQA_hIDnB0OIVeyR=s192-c-rg-br100", */
             },
           });
         }
@@ -324,8 +381,8 @@ export default function DashboardLayoutBranding() {
         user: {
           name: user?.userName,
           email: user?.email,
-          image:
-            "https://lh3.googleusercontent.com/a/ACg8ocIikB7lwv88vTut9GgiK1_jXXCbIYvxDWSCSQA_hIDnB0OIVeyR=s192-c-rg-br100",
+          /*image:
+            "https://lh3.googleusercontent.com/a/ACg8ocIikB7lwv88vTut9GgiK1_jXXCbIYvxDWSCSQA_hIDnB0OIVeyR=s192-c-rg-br100",*/
         },
       });
 

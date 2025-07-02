@@ -5,11 +5,14 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useState } from 'react';
 import { Avatar, Box } from '@mui/material';
+import { useAuthContext } from '../hooks/useAuthContext';
 
 
 const AccountSettings: React.FC = () => {
 
     const [expanded, setExpanded] = useState<string | false>(false);
+    const { user } = useAuthContext();
+
 
     const handleChange =
       (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
@@ -54,7 +57,7 @@ const AccountSettings: React.FC = () => {
                     Your Plan
                 </Typography>
                 <Typography component="span" sx={{ color: 'text.secondary' }}>
-                    Alias +
+                    {user?.tier}
                 </Typography>
                 </AccordionSummary>
                 <AccordionDetails>

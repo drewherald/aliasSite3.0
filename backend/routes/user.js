@@ -4,10 +4,13 @@ const router = express.Router()
 
 //controller functions
 
-const {loginUser, signupUser, updateUser, sendEmail} = require('../controllers/userController')
+const {loginUser, signupUser, loginUserOauth, updateUser, sendEmail} = require('../controllers/userController')
 
 //login route
 router.post('/login', loginUser)
+
+//login oauth route
+router.post('/loginoauth', loginUserOauth)
 
 //sign up route
 router.post('/signup', signupUser)

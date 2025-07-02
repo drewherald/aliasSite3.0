@@ -39,6 +39,21 @@ const signupUser = async (req, res) => {
   }
 };
 
+const loginUserOauth = async (req, res) => {
+  const { email, userName, password } = req.body;
+
+  try {
+    const user = await User.loginUserOauth(email, userName, password);
+
+    //create token
+    const token = createToken(user._id);
+
+    res.status(200).json({ email, userName, tier: user.tier, token });
+  } catch (e) {
+    res.status(400).json({ error: e.message });
+  }
+};
+
 //update user
 
 const updateUser = async (req,res) => {
@@ -129,4 +144,4 @@ const sendEmail = async (req, res) => {
 
 }
 
-module.exports = { signupUser, loginUser, updateUser, sendEmail };
+module.exports = { signupUser, loginUser, updateUser, sendEmail, loginUserOauth };

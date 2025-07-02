@@ -14,12 +14,11 @@ const SignUp: React.FC = () => {
   //signup handler
   const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    console.log("HandleSignUp line17")
     try{
                 await signup(email, name, password);
 
     }catch(e){
-        console.log(e+"HandleSignUp line22")
+        console.log(e)
     }
   };
 

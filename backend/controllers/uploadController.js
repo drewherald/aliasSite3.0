@@ -1,4 +1,19 @@
 const nodemailer = require('nodemailer'); 
+const workRequest = require("../models/workRequestModel");
+
+
+const uploadWorkRequest = async (req, res) => {
+  const {email, requestType, requestBody} = req.body;
+
+  try{
+    const request = await workRequest.createWorkRequest(email, requestType, requestBody);
+
+    res.status(200).json({ email, requestType: request.requestType, requestBody: request.requestType });
+  } catch (e) {
+    res.status(400).json({ error: e.message });
+    console.log(e.message);
+  }
+}
 
 const uploadFile = async (req, res) => {
 
@@ -41,4 +56,4 @@ const uploadFile = async (req, res) => {
     
 }
 
-module.exports = {uploadFile}
+module.exports = {uploadFile, uploadWorkRequest}
