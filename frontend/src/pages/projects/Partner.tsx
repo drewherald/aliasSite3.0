@@ -104,8 +104,8 @@ export default function Partner() {
                 </div>
             </div>
             <div className='partnerPhotoContainer'>
-            <img src={usedPartner?.photoTwo} className='partnerPagePhoto'></img>
-            <img src={usedPartner?.photoThree} className='partnerPagePhoto'></img>
+            <img src={usedPartner?.photoTwo || undefined} className='partnerPagePhoto'></img>
+            <img src={usedPartner?.photoThree || undefined} className='partnerPagePhoto'></img>
             </div>
             <hr className='partnerRunner' />
             <div className='bottomBigLinkPartner'>

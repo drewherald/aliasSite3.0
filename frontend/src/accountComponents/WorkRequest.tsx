@@ -16,6 +16,9 @@ const WorkRequest: React.FC = () => {
   const { user } = useAuthContext();
   const [type, setType] = useState<string>("");
   const [body, setBody] = useState<string>("");
+  const [error, setError] = useState<string>("");
+  const [requestResult, setrequestResult] = useState<string>("");
+
 
 
   const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -43,8 +46,10 @@ const WorkRequest: React.FC = () => {
         }
 
         const result = await response.json();
-        console.log(result);
+        setrequestResult(result.message);
+        setBody("");
       } catch (e) {
+        setError("Upload failed")
         console.log(e);
       }
     }
@@ -71,6 +76,14 @@ const WorkRequest: React.FC = () => {
           any questions, we will reach out soon. After filling out the form
           below, we will have your work ready within 3 business days.
         </Typography>
+         { requestResult != "" &&
+          <Typography textAlign={"center"} sx={{ padding: "2svh 20svw", color: "green"}}>
+         {requestResult}
+         </Typography>}
+          { error != "" &&
+          <Typography textAlign={"center"} sx={{ padding: "2svh 20svw", color: "red"}}>
+         {error}
+        </Typography>}
         <Box
           component="form"
           sx={{
@@ -87,14 +100,14 @@ const WorkRequest: React.FC = () => {
               id="demo-simple-select"
               value={type}
               onChange={handleChange}
-              label="type"
+              label="Graphic Type"
             >
               <MenuItem value={"Instagram Post"}>Instagram Post</MenuItem>
               <MenuItem value={"Instagram/FB Story"}>Instagram/FB Story</MenuItem>
               <MenuItem value={"X/Twitter Post"}>X/Twitter Post</MenuItem>
               <MenuItem value={"Custom Logo"}>Custom Logo</MenuItem>
             </Select>
-          </FormControl>
+       
 
           <TextField
             id="outlined-basic"
@@ -104,6 +117,7 @@ const WorkRequest: React.FC = () => {
             variant="outlined"
             onChange={e => setBody(e.target.value)}
             sx={{ margin: "2.5svh 0 0 0", width: "50svw" }}
+            value={body}
           />
           <Button
             sx={{
@@ -115,6 +129,7 @@ const WorkRequest: React.FC = () => {
           >
             Submit Request
           </Button>
+          </FormControl>
         </Box>
       </Box>
     </>
