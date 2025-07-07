@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const billingRoutes = require("./routes/billing");
 const uploadRoutes = require('./routes/upload');
 const userRoutes = require("./routes/user");
+const addonRoutes = require("./routes/addons");
 
 const app = express();
 
@@ -35,6 +36,8 @@ app.use("/api/billing/", billingRoutes);
 app.use("/api/upload/", uploadRoutes);
 
 app.use("/api/user", userRoutes);
+
+app.use("/api/addons", addonRoutes);
 
 
 
