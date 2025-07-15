@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const { v4: uuidv4 } = require('uuid');
 
 const addOnSchema = new Schema({
   name: {
@@ -15,12 +16,16 @@ const addOnSchema = new Schema({
     type: String,
     required: true,
   },
+  id: {
+    type: String,
+    required: true,
+  }
 });
 
 
 
 //static get method
-addOnSchema.statics.getItems = async function () {
+addOnSchema.statics.getItems = async function (email) {
     try{
         const items = await this.find({}); // <-- empty filter: get all
         return items;
@@ -35,7 +40,7 @@ addOnSchema.statics.postItems = async function (name, price, description) {
 
    // const newItem = new Item({ name, price, description });
 
-    const savedItem = await this.create({name, price, description})
+    const savedItem = await this.create({name, price, description, id: uuidv4()})
 
     return savedItem;
   } catch (err) {

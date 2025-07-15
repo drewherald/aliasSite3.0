@@ -37,9 +37,25 @@ import { useLogout } from "../hooks/useLogout";
 import { useLogin } from "../hooks/useLogin";
 import { Alert } from "@mui/material";
   import {useGoogleLogin } from '@react-oauth/google';
+import AddOnMarketplace from "./AddOnMarketplace";
 
 type AccountContextProps = {
   userName: string;
+};
+
+type ShopContextProps = {
+  cart: addonCard[],
+  cartSize: number,
+  updateCart: (item: addonCard) => void,
+  removeCart: (id: string) => void,
+  setNewCart: (newCart: addonCard[]) => void;
+};
+
+type addonCard = {
+    name: string, 
+    price: number,
+    description: string,
+    id: string
 };
 
 const localUser = localStorage.getItem("user");
@@ -47,6 +63,14 @@ const localUser = localStorage.getItem("user");
 
 export const AccountContext = createContext<AccountContextProps>({
   userName: "",
+});
+
+export const ShopContext = createContext<ShopContextProps>({
+  cart: [],
+  cartSize: 0,
+  updateCart: () => {},
+  removeCart: () => {},
+  setNewCart: () => {}
 });
 
 const NAVIGATION: Navigation = [
@@ -202,6 +226,10 @@ function PageContent({ pathname }: { pathname: string }) {
       return <SocialsCalendar />;
       break;
 
+    case "/addOns":
+    return <AddOnMarketplace />;
+    break;
+
     case "/":
       return <AnalyticsDashboard />;
       break;
@@ -261,6 +289,35 @@ export default function DashboardLayoutBranding() {
   const [session, setSession] = useState<Session | null>(null);
   const [userName, setUserName] = useState<string>("");
   const { login, loginOauth, error } = useLogin();
+
+  const [cart, setCart] = useState<addonCard[]>([])
+  const [cartSize, setCartSize] = useState(cart.length)
+
+  const updateCart = (item: addonCard) => {
+      const newCart = cart
+      newCart.push(item)
+      setCart(newCart)
+      setCartSize(cart.length)
+  }
+
+    const setNewCart = (newCart: addonCard[]) => {
+      setCart(newCart)
+      setCartSize(newCart.length)
+  }
+
+  const removeCart = (id: string) => {
+   const oldCart = cart;
+
+    for(let i=0; i<cartSize; i++){
+      if(oldCart[i].id === id){
+        oldCart.splice(i, 1)
+        break;
+      }
+    }
+    //newCart = newCart.filter((e) => e.id != id)
+    setCart(oldCart)
+    setCartSize(oldCart.length)
+  }
 
   const Subtitle = () => {
   return (
@@ -425,9 +482,11 @@ const googleLogin = useGoogleLogin({
         />
       ) : (
         <AccountContext.Provider value={{ userName }}>
+          <ShopContext.Provider value={{cart, cartSize, updateCart, removeCart, setNewCart}}>
           <DashboardLayout>
             <PageContent pathname={router.pathname} />
           </DashboardLayout>
+          </ShopContext.Provider>
         </AccountContext.Provider>
       )}
     </AppProvider>

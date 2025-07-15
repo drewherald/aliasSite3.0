@@ -1,10 +1,10 @@
 const AddOn = require("../models/addonModel");
 
+const Cart = require("../models/cartModel");
 
-//login user
+
+
 const getAddonItems = async (req, res) => {
-
- // const { email, password } = req.body;
 
   try {
     const items = await AddOn.getItems();
@@ -27,11 +27,43 @@ const postAddOnItems = async (req, res) => {
          res.status(200).json({items});
   } catch (e) {
     res.status(400).json({ error: e.message });
-    console.log(e.message+"addOnController.28");
+    console.log(e.message);
+  }
+    
+
+}
+
+const getCartItems = async (req, res) => {
+
+  try {
+     const email = req.params.email
+
+    const items = await Cart.getItems(email);
+
+
+    res.status(200).json({items});
+  } catch (e) {
+    res.status(400).json({ error: e.message });
+    console.log(e.message);
+  }
+};
+
+const postCartItems = async (req, res) => {
+
+    try{
+        const {cart, email} = req.body;
+
+        const items = await Cart.postItems(cart, email);
+        console.log(items)
+
+         res.status(200).json({items});
+  } catch (e) {
+    res.status(400).json({ error: e.message });
+    console.log(e.message);
   }
     
 
 }
 
 
-module.exports = { getAddonItems, postAddOnItems};
+module.exports = { getAddonItems, postAddOnItems, getCartItems, postCartItems};
