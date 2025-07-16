@@ -6,6 +6,7 @@ const billingRoutes = require("./routes/billing");
 const uploadRoutes = require('./routes/upload');
 const userRoutes = require("./routes/user");
 const addonRoutes = require("./routes/addons");
+const projectRoutes = require("./routes/project")
 
 const app = express();
 
@@ -39,6 +40,7 @@ app.use("/api/user", userRoutes);
 
 app.use("/api/addons", addonRoutes);
 
+app.use("/api/project", projectRoutes);
 
 
 mongoose

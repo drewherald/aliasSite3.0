@@ -2,7 +2,12 @@ import { Card, CardContent, Typography, Box } from '@mui/material';
 
 type ProjectCard = {
     name: string, 
-    status: string,
+    projStatus: string,
+    update: {
+      userName: string,
+      body: string,
+      date: string
+    }
 };
 
 type ProjectCardProps = {
@@ -27,7 +32,7 @@ const UserProjectCard: React.FC<ProjectCardProps> = ({projInfo}) => {
             {projInfo.name}
           </Typography>
           <Typography variant="subtitle2" color="text.secondary">
-            Status: {projInfo.status}
+            Status: {projInfo.projStatus}
           </Typography>
          
         </Box>

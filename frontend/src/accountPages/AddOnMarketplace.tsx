@@ -1,4 +1,4 @@
-import { Box, Modal, Typography } from "@mui/material";
+import { Box, Button, Modal, Typography } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import AddOnItem from "../accountComponents/AddOnItem";
 import { ShopContext } from "./AccountHomeLayout";
@@ -10,6 +10,13 @@ type addonCard = {
     price: number,
     description: string,
     id: string
+};
+
+type cartItem = {
+    name: string, 
+    price: number,
+    description: string,
+    quantity: number
 };
 
 
@@ -137,6 +144,44 @@ const AddOnMarketplace: React.FC = () => {
     fetchAddonData();
   }, []); 
 
+  const postCheckOut = async () => {
+    try{
+
+      let cartItems: cartItem[] = []
+
+      globalShop.cart.map((addonItem) => cartItems.push({
+        name: addonItem.name,
+        price: addonItem.price,
+        description: addonItem.description,
+        quantity: 1
+      }))
+
+      const nameMap = new Map();
+
+      for (const item of cartItems) {
+        if (nameMap.has(item.name)) {
+          nameMap.get(item.name).quantity += 1;
+        } else {
+          nameMap.set(item.name, { ...item }); // clone to avoid mutating original
+        }
+      }
+
+      cartItems = Array.from(nameMap.values());
+
+      const res = await fetch('http://localhost:3000/api/billing/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ cartItems }),
+      });
+      const { url } = await res.json();
+      window.location.href = url;
+
+
+    }catch (err) {
+        //setError(err.message);
+        console.log(err)
+      }
+  }
 
             
 
@@ -177,8 +222,13 @@ const AddOnMarketplace: React.FC = () => {
                         <button className='removeCartButton' style={{cursor: 'pointer'}} onClick={() => {removeItem(addonItem.id)}}>Remove</button>
                         <hr style={ {width: '70svw', height:'2px', backgroundColor: 'white'}}/>
                     </Box>
-                )} </>}
+                )} 
+                
+                 <Button sx={{backgroundColor: 'grey'}} onClick={() => postCheckOut()}>Check Out</Button>
+                </>}
+                
                     </Box>
+                   
                 </Modal>
         </Box>
         { (!loadingUser && !loadingAddon) ? 

@@ -25,7 +25,7 @@ const addOnSchema = new Schema({
 
 
 //static get method
-addOnSchema.statics.getItems = async function (email) {
+addOnSchema.statics.getItems = async function () {
     try{
         const items = await this.find({}); // <-- empty filter: get all
         return items;
