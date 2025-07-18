@@ -33,7 +33,23 @@ const postProjectItems = async (req, res) => {
 
 }
 
+const addProjectComment = async (req, res) => {
+
+    try{
+        const {id, update} = req.body;
+
+        const items = await Project.addComment(id, update);
+
+         res.status(200).json({items, message: "Message posted successfully! We will reach out soon." });
+  } catch (e) {
+    res.status(400).json({ error: e.message });
+    console.log(e.message);
+  }
+    
+
+}
 
 
 
-module.exports = { getProjectItems, postProjectItems};
+
+module.exports = { getProjectItems, postProjectItems, addProjectComment};

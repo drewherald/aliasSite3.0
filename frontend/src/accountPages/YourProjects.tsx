@@ -7,11 +7,12 @@ import { useAuthContext } from "../hooks/useAuthContext";
 type ProjectCard = {
     name: string, 
     projStatus: string,
-    update: {
+    update: [{
       userName: string,
       body: string,
       date: string
-    }
+    }],
+    _id: string
 };
 
 const YourProjects: React.FC = () => {

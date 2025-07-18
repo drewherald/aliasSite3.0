@@ -53,6 +53,26 @@ projectSchema.statics.postItems = async function (name, projStatus, email, updat
   }
 }
 
+projectSchema.statics.addComment = async function (id, update) {
+    try {
+
+   // const newItem = new Item({ name, price, description });
+
+    const savedItem = await this.findByIdAndUpdate(
+      id,
+      { update: update },
+      { new: true } // return the updated document
+    );
+
+     if (!savedItem) {
+      return res.status(404).json({ message: 'Item not found' });
+    }
+    return savedItem;
+  } catch (err) {
+    console.log(err)
+    throw err;
+  }
+}
 
 
 
