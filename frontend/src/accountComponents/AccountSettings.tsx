@@ -38,7 +38,7 @@ const AccountSettings: React.FC = () => {
                     Email
                 </Typography>
                 <Typography component="span" sx={{ color: 'text.secondary' }}>
-                    drew@aliasmediadesign.com
+                    {user?.email}
                 </Typography>
                 </AccordionSummary>
                 <AccordionDetails>

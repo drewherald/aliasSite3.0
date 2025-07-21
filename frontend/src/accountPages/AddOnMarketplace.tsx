@@ -153,7 +153,7 @@ const AddOnMarketplace: React.FC = () => {
         name: addonItem.name,
         price: addonItem.price,
         description: addonItem.description,
-        quantity: 1
+        quantity: 1,
       }))
 
       const nameMap = new Map();

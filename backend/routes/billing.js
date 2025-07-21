@@ -1,6 +1,6 @@
 const express = require('express');
 
-const {getInvoices, checkoutAddOn} = require('../controllers/billingController');
+const {getInvoices, checkoutAddOn, subscriptionChange} = require('../controllers/billingController');
 
 const router = express.Router();
 
@@ -8,5 +8,7 @@ const router = express.Router();
 router.get('/', getInvoices);
 
 router.post('/create-checkout-session', checkoutAddOn)
+
+router.post('/create-sub-session', subscriptionChange)
 
 module.exports = router;
